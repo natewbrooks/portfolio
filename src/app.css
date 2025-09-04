@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+
+@config "../tailwind.config.js";
+@import 'tailwindcss';
+
+@theme {
+    /* Colors */
+    --color-black: #2a2c2d;
+    --color-light: #31353a;
+    --color-white: #E6E6E6;
+    --color-dark: #2a2c2d;
+    --color-darkest: #222223;
+    --color-blue: #45A9F9;
+    --color-green: #19f9d8;
+    --color-orange: #FFB86C;
+    --color-pink: #FF75B5;
+    --color-purple: #B084EB;
+
+    /* Font */
+    --font-sans: "Nanum Gothic Coding", monospace;
+
+    /* Keyframes for marquee animations */
+    --animate-marquee-left: marquee-left var(--duration, 40s) linear infinite;
+    --animate-marquee-up: marquee-up var(--duration, 40s) linear infinite;
+}
+
+/* Define keyframes */
+@keyframes marquee-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+@keyframes marquee-up {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(-100% - var(--gap)));
+    }
+}
+
+/* Vanilla CSS */
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+button:active {
+    scale: 98%;
+}
+
+button:hover {
+    opacity: 60%;
+}
+
+/* SCAN LINES */
+/* https://codepen.io/ynef/pen/yvvyGv */
+.scanlines {
+    position: relative;
+}
+.scanlines:before,
+.scanlines:after {
+    display: block;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+}
+.scanlines:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483648;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.1) 50% /* this is supposed to be 0.3 with 1s animation for moving */
+    );
+    background-size: 100% 4px;
+    animation: scanlines 0s steps(60) infinite;
+}
+
+/* ANIMATE UNIQUE SCANLINE */
+@keyframes scanline {
+    0% {
+        transform: translate3d(0, 200000%, 0);
+    }
+}
+@keyframes scanlines {
+    0% {
+        background-position: 0 50%;
+    }
+}
+
+
+/* Scrollbar */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #31353a #222223;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #222223;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #31353a;
+    border-radius: 4px;
+    border: 3px solid #222223;
+  }

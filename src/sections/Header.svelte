@@ -1,0 +1,73 @@
+<script lang="ts">
+    import pfp from '$lib/assets/pfp.webp'
+    import pet from '$lib/assets/pet.png'
+    import kris from '$lib/assets/kris.GIF'
+    import mrfox from '$lib/assets/mrfox_hypno.GIF'
+    import IconGithub from '~icons/mdi/github'
+    import IconLinkedin from '~icons/mdi/linkedin'
+    import IconMail from '~icons/uil/envelope-open'
+    import IconCV from '~icons/tabler/file-cv'
+    import IconDiscord from '~icons/ic/baseline-discord'
+	import StatusMarquee from '../modules/StatusMarquee.svelte';
+	import { slide } from 'svelte/transition';
+	import { getContext } from 'svelte';
+	import { elasticInOut } from 'svelte/easing';
+
+    let {toggleAbout} = $props();
+    const hasScrolled: typeof Function = getContext("hasScrolled");
+
+    let isCompact = $state(false)
+
+
+</script>
+
+<header class="w-full sticky top-0 pt-4  md:pt-20 z-30 space-y-4 border-b-1 border-light pb-2 bg-darkest">
+        
+        {#key hasScrolled()}
+            <div 
+            transition:slide={{delay: 200, axis: "y"}}
+            class={[!hasScrolled() ? "flex flex-col sm:flex-row sm:justify-between sm:space-x-8" :
+                "flex-row justify-between items-center", "flex  w-full space-x-2 px-4 lg:px-0"
+            ]}>
+                    
+                    <div class="flex flex-col justify-end text-start">
+                        <span class="font-bold text-2xl text-white ">nate w. brooks</span>
+                        <h1 class="italic text-orange text-md">software engineer</h1>
+                        <h1 class="italic text-purple text-md"> cs @ towson</h1>
+                    </div>
+
+                    <div class={[!hasScrolled() ? "justify-center w-full sm:w-fit" : "justify-end", "group flex space-x-2 "]}>
+                        <div class={[!hasScrolled() ? "text-2xl " : "text-lg", "sm:text-lg flex flex-col space-y-2 w-fit  justify-end items-center"]}>
+                            <button>
+                                <a href="https://github.com/natewbrooks" target="_blank">
+                                    <IconGithub class="text-white"/>
+                                </a>
+                            </button>
+                            <button>
+                                <a href="/cv" target="_blank">
+                                    <IconCV class="text-white"/>
+                                </a>
+                            </button>
+                            <button>
+                                <a href="mailto:natewbrooks@gmail.com">
+                                    <IconMail class=""/>
+                                </a>
+                            </button>
+                        </div>
+                            <a 
+                            href={"/cv"}
+                            target="_blank"
+                            onmouseenter={() => toggleAbout()}
+                            onmouseleave={() => toggleAbout()}
+                            class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
+                            <img
+                                src={mrfox}
+                                class=""
+                                alt="pfp"
+                            />
+                        </a>
+                    </div>
+            </div>
+        {/key}
+        <StatusMarquee/>
+    </header>
