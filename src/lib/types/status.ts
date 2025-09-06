@@ -25,7 +25,7 @@ export const statusItems: StatusItem[] = [
     icon: IconSpotify,
     colorClass: "text-green",
     label: "listening to:",
-    status: "the sweet escape", 
+    status: "fernando", 
   },
   {
     icon: IconPodcast,
@@ -37,8 +37,8 @@ export const statusItems: StatusItem[] = [
     icon: IconTrophy,
     colorClass: "text-orange",
     label: "song of the week:",
-    status: "punkrocker",
-    subLabel: "x12",
+    status: "bless the telephone",
+    subLabel: "",
   },
   {
     icon: IconBrain,
@@ -50,7 +50,7 @@ export const statusItems: StatusItem[] = [
     icon: IconGit,
     colorClass: "text-purple",
     label: "last commit repo:",
-    status: "joust",
+    status: "portfolio",
   },
   {
     icon: IconGame,

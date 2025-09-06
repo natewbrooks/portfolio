@@ -7,7 +7,7 @@
   <br/>
   <br/>
   <div class="max-h-[360px] md:max-h-[320px] overflow-y-auto">
-    <ul class="list-none ml-2 border-l-1 border-light pl-2 flex-col space-y-2">
+    <ul class="list-none ml-4 flex-col space-y-2">
       {#each workExperience as work}
         <li class="">
            <div class="w-full flex text-sm">

@@ -44,7 +44,7 @@
                                 </a>
                             </button>
                             <button>
-                                <a href="/cv" target="_blank">
+                                <a href="/cv">
                                     <IconCV class="text-white"/>
                                 </a>
                             </button>
@@ -56,7 +56,6 @@
                         </div>
                             <a 
                             href={"/cv"}
-                            target="_blank"
                             onmouseenter={() => toggleAbout()}
                             onmouseleave={() => toggleAbout()}
                             class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>

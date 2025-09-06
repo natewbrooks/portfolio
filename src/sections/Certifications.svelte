@@ -10,7 +10,7 @@
   <br/>
   <br/>
   <div class="max-h-[220px] overflow-y-auto ">
-    <ul class="list-none ml-2 border-l-1 border-light pl-2 flex flex-col space-y-1">
+    <ul class="list-none ml-4 flex flex-col space-y-1">
       {#each certifications as cert}
         <li class="">
             <p class="inline">{cert.name}</p>

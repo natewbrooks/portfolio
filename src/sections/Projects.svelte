@@ -3,7 +3,8 @@
   import ProjectCarousel from '../modules/ProjectCarousel.svelte';
   import { TechIcons } from '$lib/types/project';
 
-  let highlighted = $state("")
+  let highlighted = $state("");
+  let hoverLink = $state(false);
   let carouselRef: any; // Reference to the carousel component
 
   function isHighlighted(name: string) {
@@ -14,6 +15,10 @@
     highlighted = name;
   }
 
+  function setHoverLink(toggle: boolean) {
+    hoverLink = toggle;
+  }
+
   // Effect to scroll project list when highlighted changes
   $effect(() => {
     if(highlighted != "") {
@@ -21,7 +26,7 @@
       el?.scrollIntoView({behavior: "smooth", block: "nearest"});
       
       // Also scroll carousel to show highlighted project
-      if (carouselRef) {
+      if (carouselRef && hoverLink) {
         carouselRef.scrollToProject(highlighted);
       }
     }
@@ -46,13 +51,19 @@
   <br/>
   <br/>
   <div class="max-h-[180px] md:max-h-[190px] overflow-y-auto">
-    <ul class="list-none ml-2 border-l-1 border-light pl-2 flex flex-col space-y-1">
+    <ul class="list-none ml-4 flex flex-col space-y-1">
       {#each projects as project}
       <li class="group" id={"project-" + project.name.toLowerCase().replace(/\s+/g, '-')}>
           <span class={"text-sm " + yearColor(project.year)}>{project.year}</span>
           <a href={project.link} target="_blank" 
-             onmouseenter={() => setHighlighted(project.name)} 
-             onmouseleave={() => setHighlighted("")}>
+             onmouseenter={() => {
+              setHighlighted(project.name);
+              setHoverLink(true);
+             }} 
+             onmouseleave={() => {
+              setHighlighted("");
+              setHoverLink(false);
+             }}>
             <span class={[isHighlighted(project.name) && yearColor(project.year) + " underline underline-offset-4", "w-fit"]}>
               {project.name.toLowerCase()}
             </span>
