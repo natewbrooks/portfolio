@@ -18,6 +18,7 @@
 		"@eslint/js": "^9.18.0",
 		"@iconify/json": "^2.2.380",
 		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/adapter-netlify": "^5.2.3",
 		"@sveltejs/kit": "^2.22.0",
 		"@sveltejs/vite-plugin-svelte": "^6.1.4",
 		"@tailwindcss/vite": "^4.0.0",
