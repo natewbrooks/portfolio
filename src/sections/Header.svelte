@@ -61,6 +61,7 @@
                             onmouseenter={() => toggleAbout()}
                             onmouseleave={() => toggleAbout()}
                             class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
+<<<<<<< HEAD
                                 <img
                                     src={mrfox}
                                     class=""
@@ -68,6 +69,14 @@
                                 />
                             </a>
                             <div class="hidden lg:block absolute -right-22 px-2 py-0.5 w-fit h-fit border-dashed border-2 rounded-full rounded-bl-none border-pink text-white animate-blink">hover me</div>
+=======
+                            <img
+                                src={"mrfox_hypno.GIF"}
+                                class=""
+                                alt="profile pic"
+                            />
+                        </a>
+>>>>>>> 12fcf26603410d3dda4947a596fede8f947a543b
                     </div>
             </div>
         {/key}

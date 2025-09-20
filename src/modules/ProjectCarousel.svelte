@@ -104,7 +104,6 @@
     }
 </script>
 
-<!-- Add init="false" to prevent auto-initialization -->
 <div class="relative">
     <swiper-container bind:this={swiperEl} init="false">         
         {#each projects as project, i}
@@ -136,3 +135,4 @@
             <IconRightArrow class="text-xl" />
         </button>
 </div>
+0d3dda4947a596fede8f947a543b
