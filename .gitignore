@@ -118,7 +118,6 @@ dist
 # website: https://kit.svelte.dev/
 
 .svelte-kit/
-package
 
 # End of https://www.toptal.com/developers/gitignore/api/svelte
 
@@ -181,3 +180,8 @@ Thumbs.db
 # Netlify / Vercel / adapters
 .vercel/
 .netlify/
+
+
+
+.svelte-kit/non-ambient.d.ts
+.svelte-kit/generated/server/internal.js

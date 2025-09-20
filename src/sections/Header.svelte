@@ -12,21 +12,21 @@
 	import { getContext } from 'svelte';
 	import { elasticInOut } from 'svelte/easing';
 
-    const hasScrolled: typeof Function = getContext("hasScrolled");
+    // const hasScrolled: typeof Function = getContext("hasScrolled");
+    const hasScrolled = () => false;
 
     let revealAbout = $state(false)
-
+3
     function toggleAbout() {
         revealAbout = !revealAbout;
     }
 
 </script>
 
-<header class="w-full sticky top-0 pt-4  md:pt-20 z-30 space-y-4 border-b-1 border-light pb-2 bg-darkest">
+<header class="w-full pt-4  md:pt-20 z-30 space-y-4 border-b-1 border-light pb-2 bg-darkest">
         
         {#key hasScrolled()}
             <div 
-            transition:slide={{delay: 200, axis: "y"}}
             class={[!hasScrolled() ? "flex flex-col sm:flex-row sm:justify-between sm:space-x-8" :
                 "flex-row justify-between items-center", "flex  w-full space-x-2 px-4 lg:px-0"
             ]}>
@@ -60,15 +60,16 @@
                             onmouseenter={() => toggleAbout()}
                             onmouseleave={() => toggleAbout()}
                             class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
+
                             <img
                                 src={"images/mrfox.GIF"}
                                 class=""
                                 alt="profile pic"
                             />
                         </a>
+                    </div>
             </div>
         {/key}
-        
         <StatusMarquee/>
         <div class="hidden md:block  border-light ">
             {#if revealAbout}
