@@ -2,7 +2,6 @@
     import pfp from '$lib/assets/pfp.webp'
     import pet from '$lib/assets/pet.png'
     import kris from '$lib/assets/kris.GIF'
-    import mrfox from '$lib/assets/mrfox_hypno.GIF'
     import IconGithub from '~icons/mdi/github'
     import IconLinkedin from '~icons/mdi/linkedin'
     import IconMail from '~icons/uil/envelope-open'
@@ -60,9 +59,9 @@
                             onmouseleave={() => toggleAbout()}
                             class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
                             <img
-                                src={mrfox}
+                                src={"mrfox_hypno.GIF"}
                                 class=""
-                                alt="pfp"
+                                alt="profile pic"
                             />
                         </a>
                     </div>

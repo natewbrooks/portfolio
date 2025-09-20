@@ -97,7 +97,7 @@
                 onclick={() => handleCarouselItemInteraction(project)}
                 id={"project-img-" + project.name.toLowerCase().replace(/\s+/g, '-') + "-" + i}
                 src={project.img}
-                class={[highlighted.toLowerCase()==project.name.toLowerCase() && `border-2 ${"border-" + yearColor(project.year).split("-")[1]} ${yearColor(project.year)}`, "border-2 bg-light aspect-video w-full text-center text-light rounded-sm hover:cursor-grab active:cursor-grabbing active:scale-95"]}
+                class={[highlighted.toLowerCase()==project.name.toLowerCase() && `border-2 ${`border-${yearColor(project.year).split("-")[1]}`} ${yearColor(project.year)}`, "border-2 bg-light aspect-video w-full text-center text-light rounded-sm hover:cursor-grab active:cursor-grabbing active:scale-95"]}
                 alt={project.name}
             />
         </swiper-slide>
