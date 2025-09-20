@@ -1,15 +1,24 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { register } from 'swiper/element/bundle';
+    import IconLeftArrow from '~icons/picon/left'
+    import IconRightArrow from '~icons/picon/right'
+
     register();
 
-    let { projects, highlighted, setHighlighted, yearColor } = $props();
+    let { projects, highlighted, setHighlighted, yearStyles } = $props();
 
     let swiperEl: HTMLElement;
     let swiperInstance: any;
 
     const swiperParams = {
-        mousewheelForceToAxis: true,
+        mousewheel: {
+            enabled: true,
+            forceToAxis: true,       // only move when wheel intent matches axis
+            releaseOnEdges: true,    // bubble wheel back to page when at ends
+            thresholdDelta: 20,      // reduce accidental micro-scroll slide changes
+            sensitivity: 1
+        },
         loop: false, // Disable loop for easier slide navigation
         autoplay: {
             delay: 2500,
@@ -85,21 +94,45 @@
         // Get swiper instance after initialization
         swiperInstance = swiperEl.swiper;
     });
+
+    function nextSlide() {
+        swiperInstance?.slideNext();
+    }
+
+    function prevSlide() {
+        swiperInstance?.slidePrev();
+    }
 </script>
 
 <!-- Add init="false" to prevent auto-initialization -->
-<swiper-container bind:this={swiperEl} init="false">         
-    {#each projects as project, i}
-        <swiper-slide>
-            <img
-                onmouseenter={() => handleCarouselItemInteraction(project)}
-                onmouseleave={() => setHighlighted("")}
-                onclick={() => handleCarouselItemInteraction(project)}
-                id={"project-img-" + project.name.toLowerCase().replace(/\s+/g, '-') + "-" + i}
-                src={project.img}
-                class={[highlighted.toLowerCase()==project.name.toLowerCase() && `border-2 ${"border-" + yearColor(project.year).split("-")[1]} ${yearColor(project.year)}`, "border-2 bg-light aspect-video w-full text-center text-light rounded-sm hover:cursor-grab active:cursor-grabbing active:scale-95"]}
-                alt={project.name}
-            />
-        </swiper-slide>
-    {/each}
-</swiper-container>
+<div class="relative">
+    <swiper-container bind:this={swiperEl} init="false">         
+        {#each projects as project, i}
+            <swiper-slide>
+                <img
+                    onmouseenter={() => handleCarouselItemInteraction(project)}
+                    onmouseleave={() => setHighlighted("")}
+                    onclick={() => handleCarouselItemInteraction(project)}
+                    id={"project-img-" + project.name.toLowerCase().replace(/\s+/g, '-') + "-" + i}
+                    src={project.img}
+                    class={[highlighted.toLowerCase()==project.name.toLowerCase() && `border-2 ${yearStyles(project.year).border} `, "border-2 bg-light aspect-video w-full text-center text-light rounded-sm hover:cursor-grab active:cursor-grabbing active:scale-95"]}
+                    alt={project.name}
+                />
+            </swiper-slide>
+        {/each}
+    </swiper-container>
+
+    <button
+            class="hidden md:block absolute -translate-y-1/2 top-1/2 -left-10 text-white/50 px-2 py-1 rounded-l hover:bg-darkest"
+            onclick={prevSlide}
+        >
+            <IconLeftArrow class="text-xl" />
+        </button>
+
+    <button
+            class="hidden md:block  absolute -translate-y-1/2 top-1/2  -right-10 text-white/50 px-2 py-1 rounded-l hover:bg-darkest"
+            onclick={nextSlide}
+        >
+            <IconRightArrow class="text-xl" />
+        </button>
+</div>

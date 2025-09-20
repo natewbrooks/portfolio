@@ -5,13 +5,14 @@
 
 	let { children } = $props();
 	let scrollY: number = $state(0);
+	let windowWidth: number = $state(0);
 	let scrolled: boolean = $state(false);
 
 	setContext("hasScrolled", () => scrolled)
 
 	$effect(() => {
 		// do not reset when reaching top
-		if(!scrolled && scrollY > 10) {
+		if(!scrolled && scrollY > 10 && windowWidth < 800) {
 			scrolled = true;
 		}
 	})
@@ -21,8 +22,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<svelte:window bind:scrollY={scrollY} />
+<svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 
-<main class="mx-auto max-w-3xl mx-4 font-sans " >
+<main class="mx-auto max-w-3xl mx-4 font-sans">
 	{@render children?.()}
 </main>

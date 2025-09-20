@@ -37,6 +37,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | "/cv" | "/cv/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/images/bombsniffer.webp" | "/images/caption-creators.webp" | "/images/chess.webp" | "/images/dimf.webp" | "/images/joust.webp" | "/images/linganoreumc.webp" | "/images/lizsite.webp" | "/images/management_tool.webp" | "/images/Nate_Brooks_Resume.pdf" | "/images/portfolioSite.webp" | "/images/ppro.webp" | "/images/termdleImg.webp" | "/images/updatedPortfolio.webp" | "/robots.txt" | string & {};
+		Asset(): "/images/Nate_Brooks_Resume.pdf" | "/images/bombsniffer.webp" | "/images/caption-creators.webp" | "/images/chess.webp" | "/images/dimf.webp" | "/images/joust.webp" | "/images/linganoreumc.webp" | "/images/lizsite.webp" | "/images/management_tool.webp" | "/images/portfolioSite.webp" | "/images/ppro.webp" | "/images/termdleImg.webp" | "/images/updatedPortfolio.webp" | "/robots.txt" | string & {};
 	}
 }

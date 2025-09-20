@@ -32,16 +32,12 @@
     }
   })
 
-  function yearColor(year: number | string) {
+  function yearStyles(year: number | string) {
     switch (year) {
-      case 2025:
-        return "text-purple";
-      case 2024:
-        return "text-pink";
-      case 2023:
-        return "text-orange";
-      default:
-        return "text-green";
+      case 2025: return { text: 'text-purple', border: 'border-purple' };
+      case 2024: return { text: 'text-pink',   border: 'border-pink'   };
+      case 2023: return { text: 'text-orange', border: 'border-orange' };
+      default:   return { text: 'text-green',  border: 'border-green'  };
     }
   }
 </script>
@@ -54,7 +50,7 @@
     <ul class="list-none ml-4 flex flex-col space-y-1">
       {#each projects as project}
       <li class="group" id={"project-" + project.name.toLowerCase().replace(/\s+/g, '-')}>
-          <span class={"text-sm " + yearColor(project.year)}>{project.year}</span>
+          <span class={`text-sm ${yearStyles(project.year).text} `}>{project.year}</span>
           <a href={project.link} target="_blank" 
              onmouseenter={() => {
               setHighlighted(project.name);
@@ -64,7 +60,7 @@
               setHighlighted("");
               setHoverLink(false);
              }}>
-            <span class={[isHighlighted(project.name) && yearColor(project.year) + " underline underline-offset-4", "w-fit"]}>
+            <span class={[isHighlighted(project.name) &&  `${yearStyles(project.year).text} underline underline-offset-4`, "w-fit"]}>
               {project.name.toLowerCase()}
             </span>
           </a>
@@ -80,5 +76,5 @@
     </ul>
   </div>
   <br/>
-  <ProjectCarousel bind:this={carouselRef} {projects} {highlighted} {setHighlighted} {yearColor} />
+  <ProjectCarousel bind:this={carouselRef} {projects} {highlighted} {setHighlighted} {yearStyles} />
 </section>

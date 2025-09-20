@@ -22,6 +22,7 @@
     /* Keyframes for marquee animations */
     --animate-marquee-left: marquee-left var(--duration, 40s) linear infinite;
     --animate-marquee-up: marquee-up var(--duration, 40s) linear infinite;
+    --animate-blink: blink 2s step-start infinite;
 }
 
 /* Define keyframes */
@@ -42,6 +43,17 @@
         transform: translateY(calc(-100% - var(--gap)));
     }
 }
+
+/* BLINK ANIMATION */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 20%;
+  }
+}
+
 
 /* Vanilla CSS */
 button {
