@@ -68,6 +68,7 @@
                         </a>
             </div>
         {/key}
+        
         <StatusMarquee/>
         <div class="hidden md:block  border-light ">
             {#if revealAbout}
