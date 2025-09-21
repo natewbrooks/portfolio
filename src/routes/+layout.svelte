@@ -24,6 +24,6 @@
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 
-<main class="mx-auto max-w-3xl mx-4 font-sans h-full w-full scanlines">
+<main class="mx-auto max-w-3xl mx-4 font-sans h-full w-full">
 	{@render children?.()}
 </main>
