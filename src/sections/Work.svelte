@@ -6,7 +6,7 @@
   <span class="font-bold text-lg text-pink">work <span class="text-xs font-normal text-white/50">({workExperience.length})</span></span>
   <br/>
   <br/>
-  <div class="max-h-[360px] md:max-h-[320px] overflow-y-auto">
+  <div class="max-h-[300px] md:max-h-[320px] overflow-y-auto">
     <ul class="list-none ml-4 flex-col space-y-2">
       {#each workExperience as work}
         <li class="">

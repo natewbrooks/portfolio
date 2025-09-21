@@ -122,14 +122,14 @@
     </swiper-container>
 
     <button
-            class="hidden md:block absolute -translate-y-1/2 top-1/2 -left-10 text-white/50 px-2 py-1 rounded-l hover:bg-darkest"
+            class="hidden md:block absolute -translate-y-1/2 top-1/2 -left-10 text-white/50 opacity-50 px-2 py-1 rounded-l hover:bg-darkest"
             onclick={prevSlide}
         >
             <IconLeftArrow class="text-xl" />
         </button>
 
     <button
-            class="hidden md:block  absolute -translate-y-1/2 top-1/2  -right-10 text-white/50 px-2 py-1 rounded-l hover:bg-darkest"
+            class="hidden md:block  absolute -translate-y-1/2 top-1/2  -right-10 text-white/50 opacity-50 px-2 py-1 rounded-l hover:bg-darkest"
             onclick={nextSlide}
         >
             <IconRightArrow class="text-xl" />

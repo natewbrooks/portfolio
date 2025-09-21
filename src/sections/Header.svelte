@@ -24,7 +24,6 @@
 </script>
 
 <header class="w-full pt-4  md:pt-20 z-30 space-y-4 border-b-1 border-light pb-2 bg-darkest">
-        
         {#key hasScrolled()}
             <div 
             class={[!hasScrolled() ? "flex flex-col sm:flex-row sm:justify-between sm:space-x-8" :
