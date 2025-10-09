@@ -37,7 +37,7 @@ export const statusItems: StatusItem[] = [
     icon: IconTrophy,
     colorClass: "text-orange",
     label: "song of the week:",
-    status: "bless the telephone",
+    status: "where the wildflowers grow.",
     subLabel: "",
   },
   {
@@ -50,7 +50,7 @@ export const statusItems: StatusItem[] = [
     icon: IconGit,
     colorClass: "text-purple",
     label: "last commit repo:",
-    status: "portfolio",
+    status: "rate-my-slippi",
   },
   {
     icon: IconGame,
