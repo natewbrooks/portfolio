@@ -19,6 +19,7 @@ import IconHTML from '~icons/mdi/language-html5'
 import IconCSS from '~icons/tabler/brand-css3'
 import IconJS from '~icons/mdi/language-javascript'
 import IconTypescript from '~icons/mdi/language-typescript'
+import IconPostgresql from '~icons/simple-icons/postgresql'
 
 import type { ComponentType } from 'svelte'
 
@@ -32,6 +33,7 @@ export enum TECH {
   React = 'React',
   Nextjs = 'Next.js',
   MySQL = 'MySQL',
+  PostgreSQL = 'PostgreSQL',
   Docker = 'Docker',
   Python = 'Python',
   FastAPI = 'FastAPI',
@@ -56,6 +58,7 @@ export const TechIcons: Record<TECH, ComponentType> = {
   [TECH.React]: IconReact,
   [TECH.Nextjs]: IconNextjs,
   [TECH.MySQL]: IconMysql,
+  [TECH.PostgreSQL]: IconPostgresql,
   [TECH.Docker]: IconDocker,
   [TECH.Python]: IconPython,
   [TECH.FastAPI]: IconFastapi,
@@ -81,10 +84,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'Rate My Slippi',
+    description: '[WIP] A dedicated social media platform for the video game Super Smash Bros. Melee inspired by Rate My Professors and YikYak where players can review others\' accounts and upvote/downvote profiles and reviews. ',
+    year: 2025,
+    link: 'https://github.com/natewbrooks/rate-my-slippi',
+    technologies: [TECH.Docker, TECH.Svelte, TECH.Typescript, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
+    img: 'images/rate-my-slippi.webp',
+  },
+  {
+    name: 'Lexical Analyzer',
+    description: 'Given a EBNF context-free grammar and criteria, built a lexical analyzer that tokenizes input files for a parser to implement.',
+    year: 2025,
+    link: 'ttps://github.com/natewbrooks/lexicalanalyzer',
+    technologies: [TECH.Python],
+    img: 'images/lexicalanalyzer.webp',
+  },
+  {
     name: 'Updated Porfolio',
     description: 'Minimal portfolio with resume and stats tracked via API',
     year: 2025,
-    link: '',
+    link: 'https://github.com/natewbrooks/portfolio',
     technologies: [TECH.Svelte, TECH.Typescript],
     img: 'images/updatedPortfolio.webp',
   },
