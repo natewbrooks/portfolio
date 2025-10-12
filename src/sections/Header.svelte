@@ -56,8 +56,6 @@
                         </div>
                             <a 
                             href={"/cv"}
-                            onmouseenter={() => toggleAbout()}
-                            onmouseleave={() => toggleAbout()}
                             class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
 
                             <img
