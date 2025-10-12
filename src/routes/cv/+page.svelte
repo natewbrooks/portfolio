@@ -2,10 +2,10 @@
 
 </script>
 
-<div class="py-8 px-4 h-full flex flex-col space-y-2 min-h-screen">
-    <div class="w-full flex items-center justify-between">
+<div class="relative py-8 px-4 h-full flex flex-col space-y-2 min-h-screen">
+    <div class="sticky top-0 w-full flex items-center justify-between bg-darkest py-2">
         <h1 class="">Nathaniel Brooks Resume</h1>
-        <a href="/" class="text-pink">return</a>
+        <a href="/" class="text-pink">return home</a>
     </div>
     <embed src={"NathanielBrooksResume.pdf"} class="w-full h-[100vh]">
 </div>

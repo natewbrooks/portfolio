@@ -37,6 +37,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | "/cv" | "/cv/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/NathanielBrooksResume.pdf" | "/images/Nate_Brooks_Resume.pdf" | "/images/bombsniffer.webp" | "/images/caption-creators.webp" | "/images/chess.webp" | "/images/dimf.webp" | "/images/joust.webp" | "/images/lexicalanalyzer.webp" | "/images/linganoreumc.webp" | "/images/lizsite.webp" | "/images/management_tool.webp" | "/images/mrfox.GIF" | "/images/portfolioSite.webp" | "/images/ppro.webp" | "/images/rate-my-slippi.webp" | "/images/termdleImg.webp" | "/images/updatedPortfolio.webp" | "/robots.txt" | string & {};
+		Asset(): "/images/bombsniffer.webp" | "/images/caption-creators.webp" | "/images/chess.webp" | "/images/dimf.webp" | "/images/joust.webp" | "/images/lexicalanalyzer.webp" | "/images/linganoreumc.webp" | "/images/lizsite.webp" | "/images/management_tool.webp" | "/images/mrfox.GIF" | "/images/Nate_Brooks_Resume.pdf" | "/images/portfolioSite.webp" | "/images/ppro.webp" | "/images/rate-my-slippi.webp" | "/images/termdleImg.webp" | "/images/updatedPortfolio.webp" | "/NathanielBrooksResume.pdf" | "/robots.txt" | string & {};
 	}
 }
