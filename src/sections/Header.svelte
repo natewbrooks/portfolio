@@ -70,9 +70,9 @@
             </div>
         {/key}
         <StatusMarquee/>
-        <div class="hidden md:block  border-light ">
-            {#if revealAbout}
+        <div class="hidden md:block  border-light border-t-1 pt-6 ">
+            <!-- {#if revealAbout} -->
                 <p transition:slide={{axis: "y"}} class="  text-xs pb-4 -z-10">Hello! I’m 21 years old and am very passoniate about programming and have been since I was around 10 years old developing Minecraft plugins. I love learning and building with new tech stacks and can only sleep comfortably when my current problem is solved. <br/><br/>Every project teaches me something new. I have a passion for UI/UX design and architecting projects that will help others.  My goal is simple: I want to feel like <span class="text-pink">I can build anything</span> with absolute confidence.</p>
-            {/if}
+            <!-- {/if} -->
         </div>
     </header>
