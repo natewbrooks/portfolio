@@ -4,7 +4,7 @@
     import kris from '$lib/assets/kris.GIF'
     import IconGithub from '~icons/mdi/github'
     import IconLinkedin from '~icons/mdi/linkedin'
-    import IconMail from '~icons/uil/envelope-open'
+    import IconMail from '~icons/uil/envelope'
     import IconCV from '~icons/tabler/file-cv'
     import IconDiscord from '~icons/ic/baseline-discord'
 	import StatusMarquee from '../modules/StatusMarquee.svelte';
