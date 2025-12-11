@@ -68,6 +68,7 @@ declare module '$env/static/private' {
 	export const npm_lifecycle_script: string;
 	export const NVM_DIR: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
+	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 	export const npm_config_npm_version: string;
 	export const XDG_SESSION_CLASS: string;
 	export const TERM: string;
@@ -176,6 +177,7 @@ declare module '$env/dynamic/private' {
 		npm_lifecycle_script: string;
 		NVM_DIR: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
+		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 		npm_config_npm_version: string;
 		XDG_SESSION_CLASS: string;
 		TERM: string;

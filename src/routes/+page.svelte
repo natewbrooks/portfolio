@@ -10,9 +10,9 @@
 <br/>
 <div class="px-4 lg:px-0">
     <div class="py-2 md:px-0 text-md">
-        <Projects />
-        <br/>
         <Work />
+        <br/>
+        <Projects />
         <br/>
         <Certifications />
     </div>

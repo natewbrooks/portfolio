@@ -20,6 +20,7 @@ import IconCSS from '~icons/tabler/brand-css3'
 import IconJS from '~icons/mdi/language-javascript'
 import IconTypescript from '~icons/mdi/language-typescript'
 import IconPostgresql from '~icons/simple-icons/postgresql'
+import IconSwift from '~icons/lineicons/swift'
 
 import type { ComponentType } from 'svelte'
 
@@ -46,6 +47,7 @@ export enum TECH {
   HTML = 'HTML',
   CSS = 'CSS',
   JavaScript = 'JavaScript',
+  Swift = 'Swift',
 }
 
 /** Map TECH → icon component */
@@ -71,6 +73,7 @@ export const TechIcons: Record<TECH, ComponentType> = {
   [TECH.HTML]: IconHTML,
   [TECH.CSS]: IconCSS,
   [TECH.JavaScript]: IconJS,
+  [TECH.Swift]: IconSwift,
 }
 
 export type Project = {
@@ -84,6 +87,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'Spark Dating App',
+    description: 'A synchronous dating platform built for real-time, one-to-one engagement where users connect through live conversations to see if sparks fly.',
+    year: 2025,
+    link: 'https://spark-app-livid.vercel.app',
+    technologies: [TECH.React, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
+    img: 'images/spark-dating-app.webp',
+  },
+  {
+    name: 'GrubGuessr',
+    description: 'An IOS game where you guess which FDC branded food item has higher calories. Similar to the gameplay of The Higher Lower Game.',
+    year: 2025,
+    link: 'https://github.com/natewbrooks/grubguesser-backend',
+    technologies: [TECH.Swift, TECH.Python, TECH.FastAPI],
+    img: 'images/grubguessr.webp',
+  },
+  {
     name: 'Rate My Slippi',
     description: '[WIP] A dedicated social media platform for the video game Super Smash Bros. Melee inspired by Rate My Professors and YikYak where players can review others\' accounts and upvote/downvote profiles and reviews. ',
     year: 2025,
@@ -92,10 +111,10 @@ export const projects: Project[] = [
     img: 'images/rate-my-slippi.webp',
   },
   {
-    name: 'Lexical Analyzer',
-    description: 'Given a EBNF context-free grammar and criteria, built a lexical analyzer that tokenizes input files for a parser to implement.',
+    name: 'Lexical Analyzer + Syntax Parser',
+    description: 'Built a deterministic scanner that tokenizes source input using EBNF-derived rules, then implemented a grammar-driven parser that constructs structured syntax from the token stream.',
     year: 2025,
-    link: 'ttps://github.com/natewbrooks/lexicalanalyzer',
+    link: 'https://github.com/natewbrooks/lexicalanalyzer',
     technologies: [TECH.Python],
     img: 'images/lexicalanalyzer.webp',
   },

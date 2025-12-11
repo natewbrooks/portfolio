@@ -1,7 +1,7 @@
 export type WorkItem = {
   title: string, // Product Management and Cloud
   colorClass: string; // Tailwind text-{color} class
-  role: string; // Intern
+  company: string; // Intern
   date: {
     start: string,
     end: string
@@ -11,10 +11,22 @@ export type WorkItem = {
 };
 
 export const workExperience: WorkItem[] = [
+    {
+    title: "Full Stack Engineer",
+    colorClass: "text-purple",
+    company: "GoPanda - Contract",
+    date: {
+      start: "Nov 2025",
+      end: "Present"
+    },
+    description:
+      "",
+    logo: "/images/logos/fortinet.png"
+  },
   {
     title: "Product Management & Cloud Intern",
     colorClass: "text-pink",
-    role: "Fortinet Federal",
+    company: "Fortinet Federal",
     date: {
       start: "Jun 2025",
       end: "Aug 2025"
@@ -26,7 +38,7 @@ export const workExperience: WorkItem[] = [
   {
     title: "Security & Operations Intern",
     colorClass: "text-orange",
-    role: "Kite Technology Group",
+    company: "Kite Technology Group",
     date: {
       start: "May 2024",
       end: "May 2025"
@@ -38,7 +50,7 @@ export const workExperience: WorkItem[] = [
   {
     title: "Freelance Web Developer",
     colorClass: "text-blue",
-    role: "Self Employed",
+    company: "Self Employed",
     date: {
       start: "Jan 2024",
       end: "May 2024"

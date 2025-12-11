@@ -11,9 +11,9 @@
       {#each workExperience as work}
         <li class="">
            <div class="w-full flex text-sm">
-                {#if work.role} 
+                {#if work.company} 
                     <div class="flex space-x-2">
-                      <span class={"text-blue"}>{work.role}</span>
+                      <span class={work.colorClass}>{work.company}</span>
                       <span class={"text-white/50 opacity-50"}> {work.date.start} - {work.date.end}</span>
                     </div>
                 {:else}
