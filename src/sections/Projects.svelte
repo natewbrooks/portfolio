@@ -64,8 +64,8 @@
             </span>
             <span class={"inline-flex transition-all relative top-1 space-x-2 opacity-50 text-white/50"}>
                 {#each project.technologies as technology}
-                        <svelte:component this={TechIcons[technology]} class="w-4 h-4" />  
-                        <!-- <span class="text-xs">{technology}</span> -->
+                         {@const Icon = TechIcons[technology]}
+                         <Icon class="w-4 h-4"/>
                 {/each}
               </span> 
           </a>

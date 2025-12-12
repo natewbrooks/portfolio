@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const SPOTIFY_KEY: string;
 	export const SHELL: string;
 	export const npm_command: string;
 	export const npm_config_userconfig: string;
@@ -135,6 +136,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		SPOTIFY_KEY: string;
 		SHELL: string;
 		npm_command: string;
 		npm_config_userconfig: string;
