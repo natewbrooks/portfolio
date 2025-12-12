@@ -27,9 +27,9 @@
                 "flex-row justify-between items-center", "flex  w-full space-x-2 px-4 lg:px-0"
             ]}>
                     <div class="flex flex-col justify-end text-start">
-                        <span class="font-bold text-2xl text-white ">nate w. brooks</span>
-                        <h1 class="italic text-pink text-md">software engineer</h1>
-                        <h1 class="italic text-orange text-md"> cs @ towson</h1>
+                        <span class="font-bold text-2xl text-orange ">nate w. brooks</span>
+                        <h1 class=" text-pink text-md">software engineer</h1>
+                        <h1 class=" text-purple text-md"> cs @ towson</h1>
                     </div>
 
                     <div class={[!hasScrolled() ? "justify-center w-full sm:w-fit" : "justify-end", "group flex space-x-2 "]}>
@@ -52,7 +52,7 @@
                         </div>
                             <a 
                             href={"/cv"}
-                            class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full border-2 border-green rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
+                            class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
 
                             <img
                                 src={"images/mrfox.GIF"}
