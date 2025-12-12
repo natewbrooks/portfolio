@@ -42,13 +42,14 @@
 </script>
 
 <section id="projects">
-  <span class="font-bold text-blue ">projects <span class="text-xs font-normal text-white/50">({projects.length})</span></span>
+  <span class="font-bold text-pink">projects <span class="text-xs font-normal text-white/50">({projects.length})</span></span>
   <br/>
   <br/>
   <div class="max-h-[300px] md:max-h-[190px] overflow-y-auto">
-    <ul class="list-none ml-4 flex flex-col space-y-1">
+    <ul class="list-none ml-4 flex flex-col">
       {#each projects as project}
-      <li class="group" id={"project-" + project.name.toLowerCase().replace(/\s+/g, '-')}>
+      {@const c = yearStyles(project.year)}
+      <li class={`group border-l-2 pl-4 py-2 ${c.border}`} id={"project-" + project.name.toLowerCase().replace(/\s+/g, '-')}>
           <span class={`text-sm ${yearStyles(project.year).text} `}>{project.year}</span>
           <a href={project.link} target="_blank" 
              onmouseenter={() => {

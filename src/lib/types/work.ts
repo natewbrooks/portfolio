@@ -13,7 +13,7 @@ export type WorkItem = {
 export const workExperience: WorkItem[] = [
     {
     title: "Full Stack Engineer",
-    colorClass: "text-purple",
+    colorClass: "purple",
     company: "GoPanda - Contract",
     date: {
       start: "Nov 2025",
@@ -25,7 +25,7 @@ export const workExperience: WorkItem[] = [
   },
   {
     title: "Product Management & Cloud Intern",
-    colorClass: "text-pink",
+    colorClass: "pink",
     company: "Fortinet Federal",
     date: {
       start: "Jun 2025",
@@ -37,7 +37,7 @@ export const workExperience: WorkItem[] = [
   },
   {
     title: "Security & Operations Intern",
-    colorClass: "text-orange",
+    colorClass: "orange",
     company: "Kite Technology Group",
     date: {
       start: "May 2024",
@@ -49,7 +49,7 @@ export const workExperience: WorkItem[] = [
   },
   {
     title: "Freelance Web Developer",
-    colorClass: "text-blue",
+    colorClass: "blue",
     company: "Self Employed",
     date: {
       start: "Jan 2024",

@@ -27,7 +27,7 @@
     speed: 400,
     breakpoints: {
       0: { slidesPerView: 1, spaceBetween: 4 },
-      320: { slidesPerView: 2, spaceBetween: 4 },
+      420: { slidesPerView: 2, spaceBetween: 4 },
       640: { slidesPerView: 3, spaceBetween: 4 },
       1024: { slidesPerView: 3, spaceBetween: 4 }
     }
