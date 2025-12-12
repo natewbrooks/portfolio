@@ -1,12 +1,12 @@
 // Icons (prefer mdi where available)
 import IconGithub from '~icons/mdi/github'
 import IconSvelte from '~icons/ri/svelte-line'                 // no mdi
-import IconTailwind from '~icons/lineicons/tailwindcss'        // no mdi
+import IconTailwind from '~icons/file-icons/tailwind'        // no mdi
 import IconNode from '~icons/tabler/brand-nodejs'
-import IconReact from '~icons/mdi/react'
+import IconReact from '~icons/hugeicons/react'
 import IconNextjs from '~icons/tabler/brand-nextjs'            // no mdi
-import IconMysql from '~icons/tabler/sql'                  // mdi has db but not mysql logo
-import IconDocker from '~icons/mdi/docker'
+import IconMysql from '~icons/gravity-ui/abbr-sql'                  // mdi has db but not mysql logo
+import IconDocker from '~icons/simple-icons/docker'
 import IconPython from '~icons/mdi/language-python'
 import IconFastapi from '~icons/devicon-plain/fastapi'             // no mdi
 import IconTerraform from '~icons/mdi/terraform'         // no mdi
@@ -18,8 +18,8 @@ import IconGatsby from '~icons/mdi/gatsby'               // no mdi
 import IconHTML from '~icons/mdi/language-html5'
 import IconCSS from '~icons/tabler/brand-css3'
 import IconJS from '~icons/mdi/language-javascript'
-import IconTypescript from '~icons/mdi/language-typescript'
-import IconPostgresql from '~icons/simple-icons/postgresql'
+import IconTypescript from '~icons/simple-icons/typescript'
+import IconPostgresql from '~icons/akar-icons/postgresql-fill'
 import IconSwift from '~icons/lineicons/swift'
 
 import type { ComponentType } from 'svelte'
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://spark-app-livid.vercel.app',
     technologies: [TECH.React, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
-    img: 'images/spark-dating-app.webp',
+    img: 'images/spark-dating.webp',
   },
   {
     name: 'GrubGuessr',
@@ -184,7 +184,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Chess',
-    description: 'Two-player Java Swing chess app. Incomplete :D',
+    description: 'Two-player Java Swing chess app.',
     year: 2022,
     link: 'https://github.com/natewbrooks/chess',
     technologies: [TECH.Java],

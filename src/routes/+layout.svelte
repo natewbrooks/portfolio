@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon/favicon.ico';
-	import { setContext } from 'svelte';
+	import { onMount, setContext } from 'svelte';
 
 	let { children } = $props();
 	let scrollY: number = $state(0);
@@ -24,6 +24,6 @@
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 
-<main class="mx-auto max-w-3xl mx-4 font-sans h-full w-full">
+<main class="mx-auto max-w-3xl font-sans h-full w-full canvas">
 	{@render children?.()}
 </main>

@@ -21,10 +21,10 @@
         },
         loop: false, // Disable loop for easier slide navigation
         autoplay: {
-            delay: 2500,
+            delay: 2400,
             disableOnInteraction: true,
         },
-        speed: 800,
+        speed: 400,
         breakpoints: {
             0: {
                 slidesPerView: 1,

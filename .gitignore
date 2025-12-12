@@ -187,4 +187,5 @@ Thumbs.db
 .svelte-kit/non-ambient.d.ts
 .svelte-kit/generated/server/internal.js
 .svelte-kit
-/.svelte-kit
+.svelte-kit/
+*.svelte-kit*

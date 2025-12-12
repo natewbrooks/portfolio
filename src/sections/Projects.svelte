@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { projects } from '$lib/types/project'
+  import { projects, TechIcons} from '$lib/types/project'
   import ProjectCarousel from '../modules/ProjectCarousel.svelte';
-  import { TechIcons } from '$lib/types/project';
 
   let highlighted = $state("");
   let hoverLink = $state(false);
@@ -63,13 +62,15 @@
             <span class={[isHighlighted(project.name) &&  `${yearStyles(project.year).text} underline underline-offset-4`, "w-fit"]}>
               {project.name.toLowerCase()}
             </span>
-          </a>
-          <p class="inline text-sm text-white/50">{project.description} 
-              <span class={"inline-flex transition-all space-x-2 opacity-50 text-white/50"}>
+            <span class={"inline-flex transition-all relative top-1 space-x-2 opacity-50 text-white/50"}>
                 {#each project.technologies as technology}
-                  <span class="text-xs">{technology}</span>
+                        <svelte:component this={TechIcons[technology]} class="w-4 h-4" />  
+                        <!-- <span class="text-xs">{technology}</span> -->
                 {/each}
               </span> 
+          </a>
+          <p class="flex-inline text-sm text-white/50">
+              <span>{project.description} </span>
           </p>
         </li>
       {/each}
