@@ -1,6 +1,9 @@
 import { json } from "@sveltejs/kit";
-import { nowPlaying } from "$lib/server/spotify";
+import { currentListening } from "$lib/server/spotify";
 
 export async function GET() {
-  return json(await nowPlaying());
+  const data = await currentListening();
+  return json(data, {
+    headers: { "Cache-Control": "no-store" }
+  });
 }

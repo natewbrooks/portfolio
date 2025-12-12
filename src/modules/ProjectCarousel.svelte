@@ -150,7 +150,7 @@
 
 {#if isModalOpen}
   <div
-    class="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+    class="fixed inset-0 z-100 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
     onclick={closeModal}
   >
     <div
@@ -172,20 +172,6 @@
           </swiper-slide>
         {/each}
       </swiper-container>
-
-      <button
-        class="absolute -translate-y-1/2 top-1/2 left-2 md:left-4 bg-black/40 hover:bg-black/60 text-white rounded-full p-2"
-        onclick={() => modalSwiperInstance?.slidePrev()}
-      >
-        <IconLeftArrow class="text-2xl" />
-      </button>
-
-      <button
-        class="absolute -translate-y-1/2 top-1/2 right-2 md:right-4 bg-black/40 hover:bg-black/60 text-white rounded-full p-2"
-        onclick={() => modalSwiperInstance?.slideNext()}
-      >
-        <IconRightArrow class="text-2xl" />
-      </button>
 
       <button
         class="absolute top-2 right-2 bg-black/40 hover:bg-black/60 text-white rounded-full px-3 py-2 text-sm"

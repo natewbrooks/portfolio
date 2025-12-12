@@ -54,7 +54,6 @@ export async function nowPlaying() {
   if (!data?.item) return { isPlaying: false as const };
 
   const item = data.item;
-
   if (item.type === "episode") {
     return {
       isPlaying: !!data.is_playing,
@@ -71,6 +70,7 @@ export async function nowPlaying() {
     type: "track" as const,
     name: item.name,
     url: item.external_urls?.spotify ?? "",
+    previewUrl: item.preview_url ?? null,
     artists: (item.artists ?? []).map((a: any) => a.name),
     image: item.album?.images?.[0]?.url
   };
@@ -90,6 +90,31 @@ export async function mostRecentTrack() {
   };
 }
 
+export async function currentListening() {
+  const now = await nowPlaying();
+
+  if (now?.isPlaying) {
+    return {
+      ...now,
+      source: "now-playing" as const
+    };
+  }
+
+  const recent = await mostRecentTrack();
+  if (!recent) return null;
+
+  return {
+    isPlaying: false as const,
+    type: "track" as const,
+    name: recent.name,
+    artists: recent.artists,
+    url: recent.url,
+    image: recent.image,
+    playedAt: recent.playedAt,
+    source: "last-played" as const
+  };
+}
+
 export async function topTrackMonth() {
   const data = await spotifyFetch<any>(`/me/top/tracks?time_range=short_term&limit=1`);
   const t = data?.items?.[0];
@@ -105,21 +130,37 @@ export async function topTrackMonth() {
 
 export async function topTrackWeekBestEffort() {
   const after = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  const data = await spotifyFetch<any>(`/me/player/recently-played?limit=50&after=${after}`);
-  const items: any[] = data?.items ?? [];
+
+  const data = await spotifyFetch<any>(
+    `/me/player/recently-played?limit=50&after=${after}`
+  );
+
+  let items: any[] = data?.items ?? [];
+  if (!items.length) return null;
+
+  items = items.filter((it) => {
+    const t = Date.parse(it?.played_at ?? "");
+    return Number.isFinite(t) && t >= after;
+  });
+
   if (!items.length) return null;
 
   const counts = new Map<string, { track: any; n: number }>();
+
   for (const it of items) {
-    const tr = it.track;
+    const tr = it?.track;
     if (!tr?.id) continue;
-    const e = counts.get(tr.id) ?? { track: tr, n: 0 };
-    e.n += 1;
-    counts.set(tr.id, e);
+
+    const entry = counts.get(tr.id) ?? { track: tr, n: 0 };
+    entry.n += 1;
+    counts.set(tr.id, entry);
   }
 
   let best: { track: any; n: number } | null = null;
-  for (const v of counts.values()) if (!best || v.n > best.n) best = v;
+  for (const v of counts.values()) {
+    if (!best || v.n > best.n) best = v;
+  }
+
   if (!best) return null;
 
   return {
@@ -127,8 +168,7 @@ export async function topTrackWeekBestEffort() {
     artists: (best.track.artists ?? []).map((a: any) => a.name),
     url: best.track.external_urls?.spotify ?? "",
     image: best.track.album?.images?.[0]?.url,
-    playsInSample: best.n,
-    note: "Best-effort from recently-played (50-item cap)."
+    playsInSample: best.n
   };
 }
 

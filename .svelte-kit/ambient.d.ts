@@ -30,6 +30,9 @@ declare module '$env/static/private' {
 	export const SPOTIFY_CLIENT_ID: string;
 	export const SPOTIFY_KEY: string;
 	export const SPOTIFY_REDIRECT_URI: string;
+	export const GITHUB_USERNAME: string;
+	export const GITHUB_USER_ID: string;
+	export const GITHUB_TOKEN: string;
 	export const SHELL: string;
 	export const npm_command: string;
 	export const npm_config_userconfig: string;
@@ -143,6 +146,9 @@ declare module '$env/dynamic/private' {
 		SPOTIFY_CLIENT_ID: string;
 		SPOTIFY_KEY: string;
 		SPOTIFY_REDIRECT_URI: string;
+		GITHUB_USERNAME: string;
+		GITHUB_USER_ID: string;
+		GITHUB_TOKEN: string;
 		SHELL: string;
 		npm_command: string;
 		npm_config_userconfig: string;

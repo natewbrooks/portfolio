@@ -1,5 +1,16 @@
 {
-	"/": [],
+	"/": [
+		"src/routes/+page.ts"
+	],
+	"/api/github/current-streak": [
+		"src/routes/api/github/current-streak/+server.ts"
+	],
+	"/api/github/last-commit-repo": [
+		"src/routes/api/github/last-commit-repo/+server.ts"
+	],
+	"/api/github/monthly-commits": [
+		"src/routes/api/github/monthly-commits/+server.ts"
+	],
 	"/api/spotify/callback": [
 		"src/routes/api/spotify/callback/+server.ts"
 	],
