@@ -1,4 +1,25 @@
 {
 	"/": [],
+	"/api/spotify/callback": [
+		"src/routes/api/spotify/callback/+server.ts"
+	],
+	"/api/spotify/login": [
+		"src/routes/api/spotify/login/+server.ts"
+	],
+	"/api/spotify/now-playing": [
+		"src/routes/api/spotify/now-playing/+server.ts"
+	],
+	"/api/spotify/podcast": [
+		"src/routes/api/spotify/podcast/+server.ts"
+	],
+	"/api/spotify/recent": [
+		"src/routes/api/spotify/recent/+server.ts"
+	],
+	"/api/spotify/top-month": [
+		"src/routes/api/spotify/top-month/+server.ts"
+	],
+	"/api/spotify/top-week": [
+		"src/routes/api/spotify/top-week/+server.ts"
+	],
 	"/cv": []
 }

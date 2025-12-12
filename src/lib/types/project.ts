@@ -1,24 +1,24 @@
-// Icons (prefer mdi where available)
+// Language Icons
 import IconGithub from '~icons/mdi/github'
-import IconSvelte from '~icons/ri/svelte-line'                 // no mdi
-import IconTailwind from '~icons/file-icons/tailwind'        // no mdi
+import IconSvelte from '~icons/ri/svelte-line'
+import IconTailwind from '~icons/file-icons/tailwind'
 import IconNode from '~icons/tabler/brand-nodejs'
 import IconReact from '~icons/hugeicons/react'
-import IconNextjs from '~icons/tabler/brand-nextjs'            // no mdi
-import IconMysql from '~icons/gravity-ui/abbr-sql'                  // mdi has db but not mysql logo
+import IconNextjs from '~icons/tabler/brand-nextjs' 
+import IconMysql from '~icons/gravity-ui/abbr-sql'              
 import IconDocker from '~icons/simple-icons/docker'
 import IconPython from '~icons/mdi/language-python'
-import IconFastapi from '~icons/devicon-plain/fastapi'             // no mdi
-import IconTerraform from '~icons/mdi/terraform'         // no mdi
-import IconThree from '~icons/tabler/brand-threejs'               // no mdi
+import IconFastapi from '~icons/devicon-plain/fastapi'
+import IconTerraform from '~icons/mdi/terraform'
+import IconThree from '~icons/tabler/brand-threejs'
 import IconJava from '~icons/hugeicons/java'
 import IconFirebase from '~icons/mdi/firebase'
-import IconSocketIO from '~icons/tabler/brand-socket-io'        // no mdi
-import IconGatsby from '~icons/mdi/gatsby'               // no mdi
+import IconSocketIO from '~icons/tabler/brand-socket-io'
+import IconGatsby from '~icons/mdi/gatsby'
 import IconHTML from '~icons/mdi/language-html5'
 import IconCSS from '~icons/tabler/brand-css3'
 import IconJS from '~icons/mdi/language-javascript'
-import IconTypescript from '~icons/simple-icons/typescript'
+import IconTypescript from '~icons/lineicons/typescript'
 import IconPostgresql from '~icons/akar-icons/postgresql-fill'
 import IconSwift from '~icons/lineicons/swift'
 
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     description: 'A synchronous dating platform built for real-time, one-to-one engagement where users connect through live conversations to see if sparks fly.',
     year: 2025,
     link: 'https://spark-app-livid.vercel.app',
-    technologies: [TECH.React, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
+    technologies: [TECH.React, TECH.Socketio, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
     img: 'images/spark-dating.webp',
   },
   {

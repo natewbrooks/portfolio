@@ -79,3 +79,10 @@
   <br/>
   <ProjectCarousel bind:this={carouselRef} {projects} {highlighted} {setHighlighted} {yearStyles} />
 </section>
+
+<style>
+  path {
+    width: 16px;
+    height: 16px;
+  }
+</style>
