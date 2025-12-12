@@ -73,7 +73,7 @@
       });
     }
 
-    if (github?.commitsThisMonth != null) {
+    if (github?.commitsThisMonth) {
       items.push({
         icon: IconCommit,
         colorClass: "text-purple",
@@ -82,7 +82,7 @@
       });
     }
 
-    if (github?.currentStreak != null) {
+    if (github?.currentStreak) {
       items.push({
         icon: IconFire,
         colorClass: "text-orange",
