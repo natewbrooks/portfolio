@@ -1,4 +1,5 @@
-import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_KEY } from "$env/static/private";
+import { env } from "$env/dynamic/private";
+
 
 const TOKEN_URL = "https://accounts.spotify.com/api/token";
 const API_BASE = "https://api.spotify.com/v1";
@@ -6,12 +7,12 @@ const API_BASE = "https://api.spotify.com/v1";
 let cachedToken: { accessToken: string; expiresAt: number } | null = null;
 
 function basicAuth() {
-  return "Basic " + Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString("base64");
+  return "Basic " + Buffer.from(`${env.SPOTIFY_CLIENT_ID}:${env.SPOTIFY_CLIENT_SECRET}`).toString("base64");
 }
 
 async function getAccessToken() {
   if (cachedToken && Date.now() < cachedToken.expiresAt) return cachedToken.accessToken;
-  if (!SPOTIFY_KEY) throw new Error("Missing SPOTIFY_KEY (refresh token)");
+  if (!env.SPOTIFY_KEY) throw new Error("Missing SPOTIFY_KEY (refresh token)");
 
   const res = await fetch(TOKEN_URL, {
     method: "POST",
@@ -21,7 +22,7 @@ async function getAccessToken() {
     },
     body: new URLSearchParams({
       grant_type: "refresh_token",
-      refresh_token: SPOTIFY_KEY
+      refresh_token: env.SPOTIFY_KEY
     })
   });
 
