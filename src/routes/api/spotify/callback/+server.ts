@@ -1,4 +1,4 @@
-import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REDIRECT_URI } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 
 export async function GET({ url }) {
   const code = url.searchParams.get("code");
@@ -8,13 +8,13 @@ export async function GET({ url }) {
     method: "POST",
     headers: {
       Authorization:
-        "Basic " + Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString("base64"),
+        "Basic " + Buffer.from(`${env.SPOTIFY_CLIENT_ID}:${env.SPOTIFY_CLIENT_SECRET}`).toString("base64"),
       "Content-Type": "application/x-www-form-urlencoded"
     },
     body: new URLSearchParams({
       grant_type: "authorization_code",
       code,
-      redirect_uri: SPOTIFY_REDIRECT_URI
+      redirect_uri: env.SPOTIFY_REDIRECT_URI
     })
   });
 

@@ -1,5 +1,6 @@
 import { redirect } from "@sveltejs/kit";
-import { SPOTIFY_CLIENT_ID, SPOTIFY_REDIRECT_URI } from "$env/static/private";
+import { env } from "$env/dynamic/private";
+
 
 const scope = [
   "user-read-currently-playing",
@@ -14,8 +15,8 @@ export function GET() {
     "https://accounts.spotify.com/authorize?" +
     new URLSearchParams({
       response_type: "code",
-      client_id: SPOTIFY_CLIENT_ID,
-      redirect_uri: SPOTIFY_REDIRECT_URI,
+      client_id: env.SPOTIFY_CLIENT_ID,
+      redirect_uri: env.SPOTIFY_REDIRECT_URI,
       scope,
       show_dialog: "true"
     });

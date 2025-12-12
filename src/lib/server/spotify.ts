@@ -1,6 +1,5 @@
 import { env } from "$env/dynamic/private";
 
-
 const TOKEN_URL = "https://accounts.spotify.com/api/token";
 const API_BASE = "https://api.spotify.com/v1";
 
