@@ -197,12 +197,6 @@
         {/each}
       </swiper-container>
 
-      <button
-        class="absolute top-2 right-2 bg-black/40 hover:bg-black/60 text-white rounded-full px-3 py-2"
-        onclick={closeModal}
-      >
-        Close
-      </button>
     </div>
   </div>
 {/if}
