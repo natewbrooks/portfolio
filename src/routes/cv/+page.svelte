@@ -3,5 +3,9 @@
         <h1 class="">Nathaniel Brooks Resume</h1>
         <a href="/" class="text-pink">return</a>
     </div>
-    <embed src={"NathanielBrooksResume.pdf"} class="w-full h-[100vh]">
+    <embed src={"NathanielBrooksResume.pdf"} class="w-full h-[100vh] z-50">
+</div>
+
+<div class="crt-on">
+    <div class="crt-overlay"></div>
 </div>
