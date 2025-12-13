@@ -17,7 +17,7 @@
     --color-purple: #B084EB;
 
     /* Font */
-    --font-sans: "Nanum Gothic Coding", monospace;
+    --font-sans: "Nanum Gothic Coding";
 
     /* Keyframes for marquee animations */
     --animate-marquee-left: marquee-left var(--duration, 40s) linear infinite;

@@ -27,7 +27,7 @@
                     </div>
 
                     <div class={[!hasScrolled() ? "justify-center w-full sm:w-fit" : "justify-end", "group flex "]}>
-                        <div class={[!hasScrolled() ? "text-2xl" : "text-lg", "sm:text-lg flex flex-col w-fit justify-end items-center"]}>
+                        <div class={[!hasScrolled() ? "text-2xl" : "text-lg", "sm:text-xl flex flex-col w-fit justify-end items-center"]}>
                             <button class="border-l-2 px-2 py-1 sm:py-0.5 text-orange border-orange" name="github">
                                 <a href="https://github.com/natewbrooks" target="_blank" aria-label="github link">
                                     <IconGithub class=""/>
