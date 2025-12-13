@@ -59,9 +59,6 @@
         {/key}
         <StatusMarquee/>
         <div class="px-4 lg:px-0 border-light border-t-1 pt-6 ">
-            <!-- {#if revealAbout}
-                <p transition:slide={{axis: "y"}} class="  text-sm pb-4 -z-10">Hello! I’m 21 years old and am very passoniate about programming and have been since I was around 10 years old developing Minecraft plugins. I love learning and building with new tech stacks and can only sleep comfortably when my current problem is solved. <br/><br/>Every project teaches me something new. I have a passion for UI/UX design and architecting projects that will help others.  My goal is simple: I want to know <span class="text-pink">I can build anything</span> with absolute confidence.</p>
-            {/if} -->
             <p class="pb-4 -z-10">
                 I’m 21 years old and have been <span class="text-green">deeply passionate about programming</span> since I was around 10, when I started building <span>Minecraft plugins</span>.
                 I love learning and building with new tech stacks, and I only sleep comfortably once my <span class="text-orange">current problem is solved</span>.

@@ -3,13 +3,6 @@
 @config "../tailwind.config.js";
 @import 'tailwindcss';
 
-@layer base {
-  html {
-    @apply text-sm;
-  }
-}
-
-
 @theme {
     /* Colors */
     --color-black: #2a2c2d;
@@ -23,16 +16,15 @@
     --color-pink: #FF75B5;
     --color-purple: #B084EB;
 
+    /* Text Size */
     --text-xs: 12px;
-    --text-sm: 14px;
+    --text-sm: 13px;
+    --text-md: 15px;
 
     /* Font */
     --font-sans: "Nanum Gothic Coding", monospace;
 
-    /* Keyframes for marquee animations */
-    --animate-marquee-left: marquee-left var(--duration, 40s) linear infinite;
-    --animate-marquee-up: marquee-up var(--duration, 40s) linear infinite;
-    --animate-blink: blink 2s step-start infinite;
+    --breakpoint-xs: 320px;
 }
 
 

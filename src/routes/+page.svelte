@@ -15,7 +15,7 @@
 <Header/>
 <br/>
 <div class="px-4 lg:px-0">
-    <div class="py-2 md:px-0 text-md">
+    <div class="py-2 md:px-0">
         <Work />
         <br/>
         <Projects />

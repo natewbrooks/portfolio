@@ -12,7 +12,7 @@
       {#each certifications as cert}
         <li class="">
             <p class="inline">{cert.name}</p>
-            <span class={"text-white/60 text-sm"}>{cert.date}</span>
+            <span class={"text-white/60"}>{cert.date}</span>
         </li>
       {/each}
     </ul>
