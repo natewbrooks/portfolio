@@ -8,6 +8,28 @@
 
   let { projects, highlighted, setHighlighted, yearStyles } = $props();
 
+  const imgModules = import.meta.glob("/images/**/*.{webp,png,jpg,jpeg,gif,svg}", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }) as Record<string, string>;
+
+  const IMG: Record<string, string> = Object.fromEntries(
+    Object.entries(imgModules).map(([k, v]) => [k.replace("?url", ""), v])
+  );
+
+  const normalize = (p: string) => {
+    const s = (p ?? "").trim();
+    if (!s) return "";
+    return s.startsWith("/") ? s : `/${s}`;
+  };
+
+  const resolveImg = (project: any) => {
+    const raw = normalize(project?.img);
+    if (!raw) return "";
+    return IMG[raw] ?? raw;
+  };
+
   let swiperEl: HTMLElement;
   let swiperInstance: any;
 
@@ -33,7 +55,6 @@
     }
   };
 
-  // modal swiper
   let isModalOpen = $state(false);
   let modalStartIndex = $state(0);
   let modalSwiperEl: HTMLElement;
@@ -122,7 +143,7 @@
           onmouseenter={() => handleCarouselItemInteraction(project)}
           onmouseleave={() => setHighlighted("")}
           onclick={() => openModal(i, project)}
-          src={project.img}
+          src={resolveImg(project)}
           class={[
             highlighted.toLowerCase() === project.name.toLowerCase() && `border-2 ${yearStyles(project.year).border}`,
             "border-2 bg-light aspect-video w-full text-center text-light rounded-sm hover:cursor-grab active:cursor-grabbing active:scale-95"
@@ -157,15 +178,12 @@
     aria-roledescription="close modal button"
     onclick={closeModal}
   >
-    <div
-      class="relative w-full max-w-5xl"
-      onclick={(e) => e.stopPropagation()}
-    >
+    <div class="relative w-full max-w-5xl" onclick={(e) => e.stopPropagation()}>
       <swiper-container bind:this={modalSwiperEl} init="false">
         {#each projects as project}
           <swiper-slide>
             <img
-              src={project.img}
+              src={resolveImg(project)}
               alt={project.name}
               class="w-full max-h-[80vh] object-contain rounded-md"
               draggable="false"
