@@ -24,7 +24,7 @@
                 <span class={`${c.text} whitespace-nowrap`}>
                   {work.company}
                 </span>
-                <time class={`${c.text} opacity-70 xs:opacity-100 text-xs whitespace-nowrap`}>
+                <time class={`${c.text} whitespace-nowrap`}>
                   {work.date.start} → {work.date.end}
                 </time>
               {:else}
@@ -36,6 +36,7 @@
 
             <p>
                 <span class={"text-white "}>{work.title}</span> 
+                <br/>
                 <span class={"text-white/50"}>{work.description}</span>
             </p>
             
