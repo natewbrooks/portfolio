@@ -18,7 +18,7 @@
         {#key hasScrolled()}
             <div 
             class={[!hasScrolled() ? "flex flex-col sm:flex-row sm:justify-between sm:space-x-8" :
-                "flex-row justify-between items-center", "flex  w-full space-x-2 px-4 lg:px-0"
+                "flex-row justify-between items-center", "flex sm:items-center w-full space-x-2 px-4 lg:px-0"
             ]}>
                     <div class="flex flex-col justify-end text-start">
                         <span class="font-bold text-2xl text-orange ">nate w. brooks</span>
@@ -46,7 +46,7 @@
                         </div>
                             <a 
                             href={"/cv"}
-                            class={[!hasScrolled() ? "w-42 " : "w-24", " sm:w-28 h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"]}>
+                            class={"h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10"}>
 
                             <img
                                 src={"images/mrfox.GIF"}
