@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap'); */
 
 @config "../tailwind.config.js";
 @import 'tailwindcss';
@@ -25,34 +25,6 @@
     --animate-blink: blink 2s step-start infinite;
 }
 
-/* Define keyframes */
-@keyframes marquee-left {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(calc(-100% - var(--gap)));
-    }
-}
-
-@keyframes marquee-up {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(calc(-100% - var(--gap)));
-    }
-}
-
-/* BLINK ANIMATION */
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 20%;
-  }
-}
 
 
 /* Vanilla CSS */
@@ -71,7 +43,7 @@ button:hover {
 
 /* SCAN LINES */
 /* https://codepen.io/ynef/pen/yvvyGv */
-.scanlines {
+/* .scanlines {
     position: relative;
 }
 .scanlines:before,
@@ -90,13 +62,11 @@ button:hover {
     background: linear-gradient(
         to bottom,
         transparent 50%,
-        rgba(0, 0, 0, 0.1) 50% /* this is supposed to be 0.3 with 1s animation for moving */
-    );
+        rgba(0, 0, 0, 0.1) 50%
     background-size: 100% 4px;
     animation: scanlines 0s steps(60) infinite;
 }
 
-/* ANIMATE UNIQUE SCANLINE */
 @keyframes scanline {
     0% {
         transform: translate3d(0, 200000%, 0);
@@ -109,16 +79,11 @@ button:hover {
 }
 
 
-/* Scrollbar */
-
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
   * {
     scrollbar-width: auto;
     scrollbar-color: #31353a #222223;
   }
 
-  /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 4px;
   }
@@ -131,4 +96,4 @@ button:hover {
     background-color: #31353a;
     border-radius: 4px;
     border: 3px solid #222223;
-  }
+  } */

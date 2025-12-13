@@ -19,11 +19,11 @@
       {#each workExperience as work}
         {@const c = COLOR[work.colorClass as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
-           <div class="w-full flex text-sm">
+           <div class="w-full flex">
                 {#if work.company} 
                     <div class="flex space-x-2">
                       <span class={c.text}>{work.company}</span>
-                      <span class={"text-white/60 opacity-50"}> {work.date.start} - {work.date.end}</span>
+                      <span class={c.text + " opacity-50"}> | {work.date.start} - {work.date.end}</span>
                     </div>
                 {:else}
                     <span class={"text-pink "}> {work.date.start} - {work.date.end}</span>
@@ -32,7 +32,7 @@
 
             <p>
                 <span class={"text-white "}>{work.title}</span> 
-                <span class={"text-sm text-white/60"}>{work.description}</span>
+                <span class={"text-white/50"}>{work.description}</span>
             </p>
             
             <!-- <p class="inline text-xs text-white/60">{project.description}</p> -->

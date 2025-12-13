@@ -190,7 +190,7 @@
               loading="lazy"
               decoding="async"
             />
-            <div class="mt-2 text-center text-white/60 text-sm">
+            <div class="mt-2 text-center text-white/60">
               {project.name}
             </div>
           </swiper-slide>
@@ -198,7 +198,7 @@
       </swiper-container>
 
       <button
-        class="absolute top-2 right-2 bg-black/40 hover:bg-black/60 text-white rounded-full px-3 py-2 text-sm"
+        class="absolute top-2 right-2 bg-black/40 hover:bg-black/60 text-white rounded-full px-3 py-2"
         onclick={closeModal}
       >
         Close

@@ -22,23 +22,23 @@
             ]}>
                     <div class="flex flex-col justify-end text-start">
                         <span class="font-bold text-2xl text-orange ">nate w. brooks</span>
-                        <h1 class=" text-pink text-md">software engineer</h1>
-                        <h1 class=" text-purple text-md"> cs @ towson</h1>
+                        <h1 class=" text-pink">software engineer</h1>
+                        <h1 class=" text-purple "> cs @ towson</h1>
                     </div>
 
-                    <div class={[!hasScrolled() ? "justify-center w-full sm:w-fit" : "justify-end", "group flex space-x-2 "]}>
-                        <div class={[!hasScrolled() ? "text-2xl" : "text-lg", "sm:text-lg flex flex-col w-fit  justify-end items-center"]}>
-                            <button class="border-l-2 px-2 text-orange border-orange" name="github">
+                    <div class={[!hasScrolled() ? "justify-center w-full sm:w-fit" : "justify-end", "group flex "]}>
+                        <div class={[!hasScrolled() ? "text-2xl" : "text-lg", "sm:text-lg flex flex-col w-fit justify-end items-center"]}>
+                            <button class="border-l-2 px-2 py-1 sm:py-0.5 text-orange border-orange" name="github">
                                 <a href="https://github.com/natewbrooks" target="_blank" aria-label="github link">
                                     <IconGithub class=""/>
                                 </a>
                             </button>
-                            <button class="border-l-2 px-2 py-1 text-pink border-pink" name="resume">
+                            <button class="border-l-2 px-2 py-1 sm:py-0.5 text-pink border-pink" name="resume">
                                 <a href="/cv" aria-label="resume page link">
                                     <IconCV class=""/>
                                 </a>
                             </button>
-                            <button class="border-l-2 px-2 border-purple text-purple" name="email">
+                            <button class="border-l-2 px-2 py-1 sm:py-0.5 border-purple text-purple" name="email">
                                 <a href="mailto:natewbrooks@gmail.com" aria-label="email link">
                                     <IconMail class=""/>
                                 </a>
@@ -62,7 +62,7 @@
             <!-- {#if revealAbout}
                 <p transition:slide={{axis: "y"}} class="  text-sm pb-4 -z-10">Hello! I’m 21 years old and am very passoniate about programming and have been since I was around 10 years old developing Minecraft plugins. I love learning and building with new tech stacks and can only sleep comfortably when my current problem is solved. <br/><br/>Every project teaches me something new. I have a passion for UI/UX design and architecting projects that will help others.  My goal is simple: I want to know <span class="text-pink">I can build anything</span> with absolute confidence.</p>
             {/if} -->
-            <p class="text-sm pb-4 -z-10">
+            <p class="pb-4 -z-10">
                 I’m 21 years old and have been <span class="text-green">deeply passionate about programming</span> since I was around 10, when I started building <span>Minecraft plugins</span>.
                 I love learning and building with new tech stacks, and I only sleep comfortably once my <span class="text-orange">current problem is solved</span>.
                 <br /><br />

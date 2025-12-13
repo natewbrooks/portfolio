@@ -113,7 +113,7 @@
 <Marquee fade={true} reverse={true} pauseOnHover={true} numberOfCopies={3}>
   {#each statusItems as { icon, colorClass, label, status, subLabel }}
     {@const Icon = icon}
-    <button class="flex space-x-2 text-sm items-center">
+    <button class="flex space-x-2 items-center">
       <Icon class={colorClass}/>
       <p class={colorClass}>
         <span class="">{label.toLowerCase()}</span>

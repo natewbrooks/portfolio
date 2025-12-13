@@ -119,7 +119,7 @@ export const projects: Project[] = [
     img: 'images/optimized/lexicalanalyzer.webp',
   },
   {
-    name: 'Updated Porfolio',
+    name: 'Updated Porfolio Website',
     description: 'Minimal portfolio with resume and stats tracked via API',
     year: 2025,
     link: 'https://github.com/natewbrooks/portfolio',
@@ -143,7 +143,7 @@ export const projects: Project[] = [
     img: 'images/optimized/joust.webp',
   },
   {
-    name: 'Linganore United Methodist Church',
+    name: 'Linganore United Methodist Church Website',
     description: 'Custom site with admin panel and configurable backend.',
     year: 2025,
     link: 'https://linganoreumc.com',
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     img: 'images/optimized/linganoreumc.webp',
   },
   {
-    name: 'DIMF AutoPoster',
+    name: 'DIMF AutoPoster App',
     description: 'AI-assisted memorial post generator with Java + MySQL.',
     year: 2025,
     link: 'https://github.com/natewbrooks/dimf-autoposter',
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     img: 'images/optimized/dimf.webp',
   },
   {
-    name: 'Caption Creators',
+    name: 'Caption Creators Web App',
     description: 'Multiplayer caption game with auth, lobbies, and leaderboard.',
     year: 2024,
     link: 'https://github.com/natewbrooks/caption-creators',
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     img: 'images/optimized/caption-creators.webp',
   },
   {
-    name: 'Positive Professionals',
+    name: 'Positive Professionals Website',
     description: 'Commercial coaching site with Gatsby CMS.',
     year: 2024,
     link: 'https://positiveprofessionals.net',
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     img: 'images/optimized/ppro.webp',
   },
   {
-    name: 'Portfolio',
+    name: 'Portfolio Website',
     description: 'Personal portfolio site.',
     year: 2023,
     link: 'https://github.com/natewbrooks/portfolio-website',
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     img: 'images/optimized/chess.webp',
   },
   {
-    name: 'Bombsniffer',
+    name: 'Bombsniffer Website',
     description: 'Minesweeper clone in vanilla web tech.',
     year: 2021,
     link: 'https://github.com/natewbrooks/bombsniffer',
@@ -199,7 +199,7 @@ export const projects: Project[] = [
     img: 'images/optimized/bombsniffer.webp',
   },
   {
-    name: 'Termdle',
+    name: 'Termdle App',
     description: 'Java Swing Wordle clone.',
     year: 2021,
     link: 'https://github.com/natewbrooks/termdle',
