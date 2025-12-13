@@ -27,7 +27,7 @@
     --text-sm: 14px;
 
     /* Font */
-    --font-sans: "Nanum Gothic Coding";
+    --font-sans: "Nanum Gothic Coding", monospace;
 
     /* Keyframes for marquee animations */
     --animate-marquee-left: marquee-left var(--duration, 40s) linear infinite;
