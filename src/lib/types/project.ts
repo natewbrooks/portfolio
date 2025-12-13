@@ -82,7 +82,8 @@ export type Project = {
   year: number
   link: string
   technologies: TECH[]
-  img: string
+  imgThumb: string,
+  imgFull: string
 }
 
 export const projects: Project[] = [
@@ -92,7 +93,8 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://spark-app-livid.vercel.app',
     technologies: [TECH.React, TECH.Socketio, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
-    img: 'images/optimized/spark-dating.webp',
+    imgThumb: 'images/optimized/spark-dating.webp',
+    imgFull: 'images/spark-dating.webp',
   },
   {
     name: 'GrubGuessr',
@@ -100,15 +102,17 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/grubguesser-backend',
     technologies: [TECH.Swift, TECH.Python, TECH.FastAPI],
-    img: 'images/optimized/grubguessr.webp',
+    imgThumb: 'images/optimized/grubguessr.webp',
+    imgFull: 'images/grubguessr.webp',
   },
   {
     name: 'Rate My Slippi',
-    description: '[WIP] A dedicated social media platform for the video game Super Smash Bros. Melee inspired by Rate My Professors and YikYak where players can review others\' accounts and upvote/downvote profiles and reviews. ',
+    description: '[WIP] A dedicated social media platform for the video game Super Smash Bros. Melee inspired by Rate My Professors and YikYak where players can review others\' accounts and upvote/downvote profiles and reviews.',
     year: 2025,
     link: 'https://github.com/natewbrooks/rate-my-slippi',
     technologies: [TECH.Docker, TECH.Svelte, TECH.Typescript, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
-    img: 'images/optimized/rate-my-slippi.webp',
+    imgThumb: 'images/optimized/rate-my-slippi.webp',
+    imgFull: 'images/rate-my-slippi.webp',
   },
   {
     name: 'Lexical Analyzer + Syntax Parser',
@@ -116,7 +120,8 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/lexicalanalyzer',
     technologies: [TECH.Python],
-    img: 'images/optimized/lexicalanalyzer.webp',
+    imgThumb: 'images/optimized/lexicalanalyzer.webp',
+    imgFull: 'images/lexicalanalyzer.webp',
   },
   {
     name: 'Updated Porfolio Website',
@@ -124,7 +129,8 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/portfolio',
     technologies: [TECH.Svelte, TECH.Typescript],
-    img: 'images/optimized/updatedPortfolio.webp',
+    imgThumb: 'images/optimized/updatedPortfolio.webp',
+    imgFull: 'images/updatedPortfolio.webp',
   },
   {
     name: 'Automated Isolated Network Provisioner',
@@ -132,7 +138,8 @@ export const projects: Project[] = [
     year: 2025,
     link: '',
     technologies: [TECH.Docker, TECH.Svelte, TECH.Tailwind, TECH.Terraform, TECH.Python, TECH.FastAPI],
-    img: 'images/optimized/management_tool.webp',
+    imgThumb: 'images/optimized/management_tool.webp',
+    imgFull: 'images/management_tool.webp',
   },
   {
     name: 'JOUST',
@@ -140,7 +147,8 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/JOUST',
     technologies: [TECH.React, TECH.Threejs, TECH.Tailwind],
-    img: 'images/optimized/joust.webp',
+    imgThumb: 'images/optimized/joust.webp',
+    imgFull: 'images/joust.webp',
   },
   {
     name: 'Linganore United Methodist Church Website',
@@ -148,7 +156,8 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://linganoreumc.com',
     technologies: [TECH.Docker, TECH.Nextjs, TECH.React, TECH.MySQL, TECH.Tailwind],
-    img: 'images/optimized/linganoreumc.webp',
+    imgThumb: 'images/optimized/linganoreumc.webp',
+    imgFull: 'images/linganoreumc.webp',
   },
   {
     name: 'DIMF AutoPoster App',
@@ -156,7 +165,8 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/dimf-autoposter',
     technologies: [TECH.Java, TECH.MySQL, TECH.Python, TECH.FastAPI],
-    img: 'images/optimized/dimf.webp',
+    imgThumb: 'images/optimized/dimf.webp',
+    imgFull: 'images/dimf.webp',
   },
   {
     name: 'Caption Creators Web App',
@@ -164,7 +174,8 @@ export const projects: Project[] = [
     year: 2024,
     link: 'https://github.com/natewbrooks/caption-creators',
     technologies: [TECH.Nextjs, TECH.React, TECH.Firebase, TECH.Socketio, TECH.MySQL, TECH.Tailwind],
-    img: 'images/optimized/caption-creators.webp',
+    imgThumb: 'images/optimized/caption-creators.webp',
+    imgFull: 'images/caption-creators.webp',
   },
   {
     name: 'Positive Professionals Website',
@@ -172,7 +183,8 @@ export const projects: Project[] = [
     year: 2024,
     link: 'https://positiveprofessionals.net',
     technologies: [TECH.Gatsby, TECH.React, TECH.Firebase, TECH.Tailwind],
-    img: 'images/optimized/ppro.webp',
+    imgThumb: 'images/optimized/ppro.webp',
+    imgFull: 'images/ppro.webp',
   },
   {
     name: 'Portfolio Website',
@@ -180,7 +192,8 @@ export const projects: Project[] = [
     year: 2023,
     link: 'https://github.com/natewbrooks/portfolio-website',
     technologies: [TECH.Nextjs, TECH.React, TECH.Tailwind],
-    img: 'images/optimized/portfolioSite.webp',
+    imgThumb: 'images/optimized/portfolioSite.webp',
+    imgFull: 'images/portfolioSite.webp',
   },
   {
     name: 'Chess',
@@ -188,7 +201,8 @@ export const projects: Project[] = [
     year: 2022,
     link: 'https://github.com/natewbrooks/chess',
     technologies: [TECH.Java],
-    img: 'images/optimized/chess.webp',
+    imgThumb: 'images/optimized/chess.webp',
+    imgFull: 'images/chess.webp',
   },
   {
     name: 'Bombsniffer Website',
@@ -196,7 +210,8 @@ export const projects: Project[] = [
     year: 2021,
     link: 'https://github.com/natewbrooks/bombsniffer',
     technologies: [TECH.HTML, TECH.CSS, TECH.JavaScript],
-    img: 'images/optimized/bombsniffer.webp',
+    imgThumb: 'images/optimized/bombsniffer.webp',
+    imgFull: 'images/bombsniffer.webp',
   },
   {
     name: 'Termdle App',
@@ -204,6 +219,7 @@ export const projects: Project[] = [
     year: 2021,
     link: 'https://github.com/natewbrooks/termdle',
     technologies: [TECH.Java],
-    img: 'images/optimized/termdleImg.webp',
+    imgThumb: 'images/optimized/termdleImg.webp',
+    imgFull: 'images/termdleImg.webp',
   },
 ]
