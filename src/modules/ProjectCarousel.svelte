@@ -127,6 +127,9 @@
             highlighted.toLowerCase() === project.name.toLowerCase() && `border-2 ${yearStyles(project.year).border}`,
             "border-2 bg-light aspect-video w-full text-center text-light rounded-sm hover:cursor-grab active:cursor-grabbing active:scale-95"
           ]}
+          loading={i < 2 ? "eager" : "lazy"}
+          decoding="async"
+          fetchpriority={i < 2 ? "high" : "auto"}
           alt={project.name}
         />
       </swiper-slide>
@@ -165,6 +168,8 @@
               alt={project.name}
               class="w-full max-h-[80vh] object-contain rounded-md"
               draggable="false"
+              loading="lazy"
+              decoding="async"
             />
             <div class="mt-2 text-center text-white/60 text-sm">
               {project.name}
