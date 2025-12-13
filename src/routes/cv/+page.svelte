@@ -1,7 +1,3 @@
-<script lang="ts">
-
-</script>
-
 <div class="relative py-4 px-4 h-full flex flex-col space-y-2 min-h-screen">
     <div class="sticky top-0 w-full flex items-center justify-between bg-darkest py-2">
         <h1 class="">Nathaniel Brooks Resume</h1>

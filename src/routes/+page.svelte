@@ -4,7 +4,6 @@
 	import Header from '../sections/Header.svelte';
 	import Work from '../sections/Work.svelte';
 	import Certifications from '../sections/Certifications.svelte';
-	import { fly, slide } from 'svelte/transition';
     import { setContext } from 'svelte';
 	import School from '../sections/School.svelte';
 

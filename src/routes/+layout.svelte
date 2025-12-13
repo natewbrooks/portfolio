@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon/favicon.ico';
-	import { onMount, setContext } from 'svelte';
+	import { setContext } from 'svelte';
 
 	let { children } = $props();
 	let scrollY: number = $state(0);
@@ -19,7 +19,14 @@
 </script>
 
 <svelte:head>
+	<title>nate w. brooks</title>
 	<link rel="icon" href={favicon} />
+	<link
+	rel="preload"
+	as="image"
+	href="/images/mrfox.GIF"
+	type="image/gif"
+/>
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />

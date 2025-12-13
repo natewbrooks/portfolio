@@ -1,7 +1,6 @@
 import { env } from "$env/dynamic/private";
 
 const API_BASE = "https://api.github.com";
-const userId = 59595919;
 
 type GithubRepo = {
   id: number;
@@ -31,7 +30,7 @@ async function githubFetch<T>(path: string): Promise<T> {
 
 export async function getLastWorkedOnRepo(): Promise<GithubRepo | null> {
   const repos = await githubFetch<GithubRepo[]>(
-    `/user/${userId}/repos?sort=pushed&direction=desc&per_page=1`
+    `/user/${env.GITHUB_USER_ID}/repos?sort=pushed&direction=desc&per_page=1`
   );
   return repos[0] ?? null;
 }

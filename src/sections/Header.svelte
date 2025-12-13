@@ -1,15 +1,9 @@
 <script lang="ts">
-    import pfp from '$lib/assets/pfp.webp'
-    import pet from '$lib/assets/pet.png'
-    import kris from '$lib/assets/kris.GIF'
     import IconGithub from '~icons/mdi/github'
-    import IconLinkedin from '~icons/mdi/linkedin'
     import IconMail from '~icons/uil/envelope'
     import IconCV from '~icons/tabler/file-cv'
-    import IconDiscord from '~icons/ic/baseline-discord'
 	import StatusMarquee from '../modules/StatusMarquee.svelte';
 
-    // const hasScrolled: typeof Function = getContext("hasScrolled");
     const hasScrolled = () => false;
 
     let revealAbout = $state(false)
@@ -34,18 +28,18 @@
 
                     <div class={[!hasScrolled() ? "justify-center w-full sm:w-fit" : "justify-end", "group flex space-x-2 "]}>
                         <div class={[!hasScrolled() ? "text-2xl" : "text-lg", "sm:text-lg flex flex-col w-fit  justify-end items-center"]}>
-                            <button class="border-l-2 px-2 text-orange border-orange">
-                                <a href="https://github.com/natewbrooks" target="_blank">
+                            <button class="border-l-2 px-2 text-orange border-orange" name="github">
+                                <a href="https://github.com/natewbrooks" target="_blank" aria-label="github link">
                                     <IconGithub class=""/>
                                 </a>
                             </button>
-                            <button class="border-l-2 px-2 py-1 text-pink border-pink">
-                                <a href="/cv">
+                            <button class="border-l-2 px-2 py-1 text-pink border-pink" name="resume">
+                                <a href="/cv" aria-label="resume page link">
                                     <IconCV class=""/>
                                 </a>
                             </button>
-                            <button class="border-l-2 px-2 border-purple text-purple">
-                                <a href="mailto:natewbrooks@gmail.com">
+                            <button class="border-l-2 px-2 border-purple text-purple" name="email">
+                                <a href="mailto:natewbrooks@gmail.com" aria-label="email link">
                                     <IconMail class=""/>
                                 </a>
                             </button>
@@ -56,7 +50,7 @@
 
                             <img
                                 src={"images/mrfox.GIF"}
-                                class=""
+                                class="w-[155px] h-[140px] sm:w-[105px] sm:h-[95px]"
                                 alt="profile pic"
                             />
                         </a>
