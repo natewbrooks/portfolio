@@ -42,7 +42,7 @@
 </script>
 
 <section id="projects">
-  <span class="font-bold text-pink">projects <span class="text-xs font-normal text-white/80">({projects.length})</span></span>
+  <span class="font-bold text-pink text-md md:text-lg">projects <span class="text-xs font-normal text-white/80">({projects.length})</span></span>
   <br/>
   <br/>
   <div class="max-h-[300px] md:max-h-[190px] overflow-y-auto">

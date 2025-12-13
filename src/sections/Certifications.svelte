@@ -4,7 +4,7 @@
 
 
 <section id="certifications" class="">
-  <span class="font-bold text-orange text-lg">certifications <span class="text-xs font-normal text-white/60">({certifications.length})</span></span>
+  <span class="font-bold text-orange text-md md:text-lg">certifications <span class="text-xs font-normal text-white/60">({certifications.length})</span></span>
   <br/>
   <br/>
   <div class="max-h-[220px] overflow-y-auto ">

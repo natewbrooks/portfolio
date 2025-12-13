@@ -10,9 +10,7 @@
 </script>
 
 <section id="school">
-  <span class="font-bold text-lg text-blue">
-    education <span class="text-xs font-normal text-white/60">({school.length})</span>
-  </span>
+  <span class="font-bold text-blue text-md md:text-lg"> education <span class="text-xs font-normal text-white/60">({school.length})</span></span>
   <br />
   <br />
 

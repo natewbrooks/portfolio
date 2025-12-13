@@ -50,6 +50,6 @@
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 
-<main class="mx-auto max-w-3xl font-sans h-full w-full canvas">
+<main class="mx-auto max-w-3xl font-sans h-full w-full text-sm md:text-md">
 	{@render children?.()}
 </main>

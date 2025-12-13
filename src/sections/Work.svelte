@@ -11,7 +11,7 @@
 </script>
 
 <section id="work">
-  <span class="font-bold text-lg text-green">work <span class="text-xs font-normal text-white/60">({workExperience.length})</span></span>
+  <span class="font-bold text-md md:text-lg text-green">work <span class="text-xs font-normal text-white/60">({workExperience.length})</span></span>
   <br/>
   <br/>
   <div class="max-h-[600px] md:max-h-[320px] overflow-y-auto">
