@@ -42,7 +42,7 @@
 </script>
 
 <section id="projects">
-  <span class="font-bold text-pink">projects <span class="text-xs font-normal text-white/60">({projects.length})</span></span>
+  <span class="font-bold text-pink">projects <span class="text-xs font-normal text-white/80">({projects.length})</span></span>
   <br/>
   <br/>
   <div class="max-h-[300px] md:max-h-[190px] overflow-y-auto">
@@ -63,14 +63,14 @@
             <span class={[isHighlighted(project.name) &&  `${yearStyles(project.year).text} underline underline-offset-4`, "w-fit"]}>
               {project.name.toLowerCase()}
             </span>
-            <span class={"inline-flex transition-all relative top-1 space-x-2 opacity-50 text-white/60"}>
+            <span class={"inline-flex transition-all relative top-1 space-x-2 opacity-50 text-white/80"}>
                 {#each project.technologies as technology}
                          {@const Icon = TechIcons[technology]}
                          <Icon class="w-4 h-4"/>
                 {/each}
               </span> 
           </a>
-          <p class="flex-inline text-sm text-white/60">
+          <p class="flex-inline text-sm text-white/80">
               <span>{project.description} </span>
           </p>
         </li>

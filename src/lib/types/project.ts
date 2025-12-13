@@ -92,7 +92,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://spark-app-livid.vercel.app',
     technologies: [TECH.React, TECH.Socketio, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
-    img: 'images/spark-dating.webp',
+    img: 'images/optimized/spark-dating.webp',
   },
   {
     name: 'GrubGuessr',
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/grubguesser-backend',
     technologies: [TECH.Swift, TECH.Python, TECH.FastAPI],
-    img: 'images/grubguessr.webp',
+    img: 'images/optimized/grubguessr.webp',
   },
   {
     name: 'Rate My Slippi',
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/rate-my-slippi',
     technologies: [TECH.Docker, TECH.Svelte, TECH.Typescript, TECH.Tailwind, TECH.PostgreSQL, TECH.Python, TECH.FastAPI],
-    img: 'images/rate-my-slippi.webp',
+    img: 'images/optimized/rate-my-slippi.webp',
   },
   {
     name: 'Lexical Analyzer + Syntax Parser',
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/lexicalanalyzer',
     technologies: [TECH.Python],
-    img: 'images/lexicalanalyzer.webp',
+    img: 'images/optimized/lexicalanalyzer.webp',
   },
   {
     name: 'Updated Porfolio',
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/portfolio',
     technologies: [TECH.Svelte, TECH.Typescript],
-    img: 'images/updatedPortfolio.webp',
+    img: 'images/optimized/updatedPortfolio.webp',
   },
   {
     name: 'Automated Isolated Network Provisioner',
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     year: 2025,
     link: '',
     technologies: [TECH.Docker, TECH.Svelte, TECH.Tailwind, TECH.Terraform, TECH.Python, TECH.FastAPI],
-    img: 'images/management_tool.webp',
+    img: 'images/optimized/management_tool.webp',
   },
   {
     name: 'JOUST',
@@ -140,7 +140,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/JOUST',
     technologies: [TECH.React, TECH.Threejs, TECH.Tailwind],
-    img: 'images/joust.webp',
+    img: 'images/optimized/joust.webp',
   },
   {
     name: 'Linganore United Methodist Church',
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://linganoreumc.com',
     technologies: [TECH.Docker, TECH.Nextjs, TECH.React, TECH.MySQL, TECH.Tailwind],
-    img: 'images/linganoreumc.webp',
+    img: 'images/optimized/linganoreumc.webp',
   },
   {
     name: 'DIMF AutoPoster',
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     year: 2025,
     link: 'https://github.com/natewbrooks/dimf-autoposter',
     technologies: [TECH.Java, TECH.MySQL, TECH.Python, TECH.FastAPI],
-    img: 'images/dimf.webp',
+    img: 'images/optimized/dimf.webp',
   },
   {
     name: 'Caption Creators',
@@ -164,7 +164,7 @@ export const projects: Project[] = [
     year: 2024,
     link: 'https://github.com/natewbrooks/caption-creators',
     technologies: [TECH.Nextjs, TECH.React, TECH.Firebase, TECH.Socketio, TECH.MySQL, TECH.Tailwind],
-    img: 'images/caption-creators.webp',
+    img: 'images/optimized/caption-creators.webp',
   },
   {
     name: 'Positive Professionals',
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     year: 2024,
     link: 'https://positiveprofessionals.net',
     technologies: [TECH.Gatsby, TECH.React, TECH.Firebase, TECH.Tailwind],
-    img: 'images/ppro.webp',
+    img: 'images/optimized/ppro.webp',
   },
   {
     name: 'Portfolio',
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     year: 2023,
     link: 'https://github.com/natewbrooks/portfolio-website',
     technologies: [TECH.Nextjs, TECH.React, TECH.Tailwind],
-    img: 'images/portfolioSite.webp',
+    img: 'images/optimized/portfolioSite.webp',
   },
   {
     name: 'Chess',
@@ -188,7 +188,7 @@ export const projects: Project[] = [
     year: 2022,
     link: 'https://github.com/natewbrooks/chess',
     technologies: [TECH.Java],
-    img: 'images/chess.webp',
+    img: 'images/optimized/chess.webp',
   },
   {
     name: 'Bombsniffer',
@@ -196,7 +196,7 @@ export const projects: Project[] = [
     year: 2021,
     link: 'https://github.com/natewbrooks/bombsniffer',
     technologies: [TECH.HTML, TECH.CSS, TECH.JavaScript],
-    img: 'images/bombsniffer.webp',
+    img: 'images/optimized/bombsniffer.webp',
   },
   {
     name: 'Termdle',
@@ -204,6 +204,6 @@ export const projects: Project[] = [
     year: 2021,
     link: 'https://github.com/natewbrooks/termdle',
     technologies: [TECH.Java],
-    img: 'images/termdleImg.webp',
+    img: 'images/optimized/termdleImg.webp',
   },
 ]

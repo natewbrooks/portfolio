@@ -154,6 +154,7 @@
 {#if isModalOpen}
   <div
     class="fixed inset-0 z-100 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+    aria-roledescription="close modal button"
     onclick={closeModal}
   >
     <div
