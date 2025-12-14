@@ -19,23 +19,15 @@
       {#each workExperience as work}
         {@const c = COLOR[work.colorClass as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
+            <time class={` ${c.text} opacity-50 whitespace-nowrap text-xs`}>
+                {work.date.start} - {work.date.end}
+              </time>
             <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center ">
-              {#if work.company}
-                <time class={`block xs:hidden text-white/50 opacity-50 whitespace-nowrap`}>
-                  {work.date.start} - {work.date.end}
-                </time>
                 <span class={`${c.text} whitespace-nowrap`}>
                   {work.company}
                 </span>
-                <time class={`hidden xs:block text-white/50 opacity-50 whitespace-nowrap`}>
-                  {work.date.start} - {work.date.end}
-                </time>
-              {:else}
-                <time class="text-white/50 opacity-50 text-xs whitespace-nowrap">
-                  {work.date.start} - {work.date.end}
-                </time>
-              {/if}
-            </div>
+              </div>
+              
 
             <p>
                 <span class={"text-white "}>{work.title}</span> 
