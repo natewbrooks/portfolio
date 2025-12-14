@@ -14,7 +14,7 @@ export const workExperience: WorkItem[] = [
     {
     title: "Full Stack Engineer",
     colorClass: "purple",
-    company: "GoPanda - Contract",
+    company: "GoPanda (Contract)",
     date: {
       start: "Nov 2025",
       end: "Present"

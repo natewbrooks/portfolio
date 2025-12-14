@@ -20,27 +20,19 @@
         {@const c = COLOR[work.colorClass as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
             <time class={` ${c.text} opacity-50 whitespace-nowrap text-xs`}>
-                {work.date.start} - {work.date.end}
+                {work.date.start} → {work.date.end}
               </time>
             <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center ">
                 <span class={`${c.text} whitespace-nowrap`}>
                   {work.company}
                 </span>
               </div>
-              
 
             <p>
                 <span class={"text-white "}>{work.title}</span> 
                 <br/>
                 <span class={"text-white/50"}>{work.description}</span>
             </p>
-            
-            <!-- <p class="inline text-xs text-white/60">{project.description}</p> -->
-            <!-- <div class="flex text-white/60">
-                {#each project.technologies as technology}
-                <svelte:component this={TechIcons[technology]}/>
-                {/each}
-            </div> -->
         </li>
       {/each}
     </ul>
