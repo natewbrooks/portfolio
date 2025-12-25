@@ -5,7 +5,3 @@
     </div>
     <embed src={"NathanielBrooksResume.pdf"} class="w-full h-[100vh]">
 </div>
-
-<div class="crt-on">
-    <div class="crt-overlay"></div>
-</div>
