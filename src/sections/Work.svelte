@@ -19,20 +19,20 @@
       {#each workExperience as work}
         {@const c = COLOR[work.colorClass as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
-            <time class={` ${c.text} opacity-50 whitespace-nowrap text-xs`}>
-                {work.date.start} → {work.date.end}
-              </time>
-            <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center ">
-                <span class={`${c.text} whitespace-nowrap`}>
-                  {work.company}
-                </span>
-              </div>
-
-            <p>
-                <span class={"text-white "}>{work.title}</span> 
-                <br/>
-                <span class={"text-white/50"}>{work.description}</span>
-            </p>
+          <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center ">
+            <span class={`${c.text} whitespace-nowrap`}>
+              {work.company}
+            </span>
+          </div>
+          
+          <p>
+            <span class={"text-white "}>{work.title}</span> 
+            <br/>
+            <span class={"text-white/50"}>{work.description}</span>
+          </p>
+          <time class={` ${c.text} whitespace-nowrap text-sm`}>
+              {work.date.start} → {work.date.end}
+            </time>
         </li>
       {/each}
     </ul>

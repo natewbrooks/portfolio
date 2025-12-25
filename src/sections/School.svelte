@@ -2,10 +2,10 @@
   import { school } from "$lib/types/school";
 
   const COLOR = {
+    orange: { text: "text-orange", border: "border-orange" },
     blue: { text: "text-blue", border: "border-blue" },
     purple: { text: "text-purple", border: "border-purple" },
     pink: { text: "text-pink", border: "border-pink" },
-    orange: { text: "text-orange", border: "border-orange" },
   } as const;
 </script>
 
@@ -20,32 +20,34 @@
         {@const c = COLOR[(Object.keys(COLOR)[i % Object.keys(COLOR).length]) as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
           <div class="flex space-x-2 items-center">
-            <img src={edu.img} class="w-10 h-10" alt={edu.school + " image"}/>
+            <!-- <img src={edu.img} class="w-14 h-14" alt={edu.school + " image"}/> -->
             <div class="flex flex-col">
                 <div class="w-full flex">
                 <div class="flex space-x-2">
                   <span class={c.text}>{edu.school}</span>
                   <span class="text-white/60 opacity-50">
-                    {edu.startDate} - {edu.endDate}
+                    
                   </span>
                 </div>
               </div>
-  
+              
               <p>
                 <span class="text-white">{edu.major}</span>
                 <span class="text-white/60">GPA {edu.gpa}</span>
               </p>
-  
-            </div>
-            <!-- <ul class="mt-2 list-disc ml-5 text-sm text-white/60">
-              {#each edu.highlights as h}
+              
+                <!-- {#each edu.highlights as h}
                 <li>{h}</li>
-              {/each}
-            </ul>
-
-          </div> -->
-
-        </li>
+                {/each} -->
+              <span class="text-white/60">{edu.highlights.join(", ")}</span>
+              <time class={` ${c.text} whitespace-nowrap text-sm`}>
+                {edu.startDate} → {edu.endDate}
+              </time>
+              
+            </div>
+  
+          </div>
+          </li>
       {/each}
     </ul>
   </div>
