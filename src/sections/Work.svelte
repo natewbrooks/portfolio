@@ -15,7 +15,7 @@
   <br/>
   <br/>
   <div class="max-h-[600px] md:max-h-[320px] overflow-y-auto">
-    <ul class="list-none ml-2 xs:ml-4 flex-col">
+    <ul class="list-none ml-2 md:ml-4 flex-col">
       {#each workExperience as work}
         {@const c = COLOR[work.colorClass as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>

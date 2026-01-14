@@ -46,7 +46,7 @@
   <br/>
   <br/>
   <div class="max-h-[300px] md:max-h-[190px] overflow-y-auto">
-    <ul class="list-none ml-2 xs:ml-4 flex flex-col">
+    <ul class="list-none ml-2 md:ml-4 flex flex-col">
       {#each projects as project}
       {@const c = yearStyles(project.year)}
       <li class={`group border-l-2 pl-4 py-2 ${c.border}`} id={"project-" + project.name.toLowerCase().replace(/\s+/g, '-')}>

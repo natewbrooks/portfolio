@@ -15,7 +15,7 @@
   <br />
 
   <div class="max-h-[600px] md:max-h-[320px] overflow-y-auto">
-    <ul class="list-none ml-2 xs:ml-4 flex-col">
+    <ul class="list-none ml-2 md:ml-4 flex-col">
       {#each school as edu, i}
         {@const c = COLOR[(Object.keys(COLOR)[i % Object.keys(COLOR).length]) as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
