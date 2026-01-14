@@ -23,8 +23,8 @@
             <!-- <img src={edu.img} class="w-14 h-14" alt={edu.school + " image"}/> -->
             <div class="flex flex-col w-full">
                 <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center ">
-                  <span class={c.text}>{edu.school}</span>
-                  <time class={` ${c.text} whitespace-nowrap`}>
+                  <span class={`${c.text} font-bold`}>{edu.school}</span>
+                  <time class={` ${c.text} whitespace-nowrap text-xs xs:text-sm sm:text-md `}>
                     {edu.startDate} → {edu.endDate}
                   </time>
                 </div>
@@ -36,6 +36,7 @@
               
               <span class="text-white/60">{edu.highlights.join(", ")}</span>
             </div>
+  
           </div>
           </li>
       {/each}
