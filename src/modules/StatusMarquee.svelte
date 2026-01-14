@@ -68,7 +68,7 @@
       items.push({
         icon: IconRepo,
         colorClass: "text-pink",
-        label: "last commit repo:",
+        label: "last public commit repo:",
         status: github.lastCommitRepo.name
       });
     }
