@@ -110,10 +110,10 @@
   });
 </script>
 
-<Marquee fade={true} reverse={true} pauseOnHover={true} numberOfCopies={3}>
+<Marquee fade={true} reverse={true} numberOfCopies={3}>
   {#each statusItems as { icon, colorClass, label, status, subLabel }}
     {@const Icon = icon}
-    <button class="flex space-x-2 items-center">
+    <div class="flex space-x-2 items-center">
       <Icon class={colorClass}/>
       <p class={colorClass}>
         <span class="">{label.toLowerCase()}</span>
@@ -122,6 +122,6 @@
           <span class={colorClass}>{subLabel.toLowerCase()}</span>
         {/if}
       </p>
-    </button>
+    </div>
   {/each}
 </Marquee>
