@@ -6,6 +6,7 @@
 	import Certifications from '../sections/Certifications.svelte';
     import { setContext } from 'svelte';
 	import School from '../sections/School.svelte';
+	import About from '../sections/About.svelte';
 
     let { data }: PageProps = $props(); 
     setContext('spotify-data', data.spotify)
@@ -21,6 +22,8 @@
 <br/>
 <div class="px-4 lg:px-0">
     <div class="py-2 md:px-0">
+        <About/>
+        <br/>
         <Work />
         <br/>
         <Projects />
