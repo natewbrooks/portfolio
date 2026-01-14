@@ -18,10 +18,10 @@
     <ul class="list-none ml-4 flex flex-col space-y-1">
       {#each certifications as cert, i}
       {@const c = COLOR[(Object.keys(COLOR)[i % Object.keys(COLOR).length]) as keyof typeof COLOR]}
-        <li class={`border-l-2 ${c.border} pl-4`}>
+        <li class={`border-l-2 ${c.border} pl-4 gap-2 flex items-center`}>
             <p class="">{cert.name}</p>
-            <time class={` ${c.text} whitespace-nowrap text-sm`}>
-              {cert.date}
+            <time class={` ${c.text} whitespace-nowrap`}>
+              - {cert.date}
             </time>
         </li>
       {/each}

@@ -19,8 +19,7 @@ export const workExperience: WorkItem[] = [
       start: "Nov 2025",
       end: "Present"
     },
-    description:
-      "",
+    description: "Recruited by my Web Programming professor to support production contract development on a small engineering team. Contribute to full-stack web applications using React, RESTful APIs, and relational databases.",
     logo: "/images/logos/fortinet.png"
   },
   {

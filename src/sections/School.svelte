@@ -21,31 +21,21 @@
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
           <div class="flex space-x-2 items-center">
             <!-- <img src={edu.img} class="w-14 h-14" alt={edu.school + " image"}/> -->
-            <div class="flex flex-col">
-                <div class="w-full flex">
-                <div class="flex space-x-2">
+            <div class="flex flex-col w-full">
+                <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center ">
                   <span class={c.text}>{edu.school}</span>
-                  <span class="text-white/60 opacity-50">
-                    
-                  </span>
+                  <time class={` ${c.text} whitespace-nowrap`}>
+                    {edu.startDate} → {edu.endDate}
+                  </time>
                 </div>
-              </div>
+                
+                <p>
+                  <span class="text-white">{edu.major}</span>
+                  <span class="text-white/60">GPA {edu.gpa}</span>
+                </p>
               
-              <p>
-                <span class="text-white">{edu.major}</span>
-                <span class="text-white/60">GPA {edu.gpa}</span>
-              </p>
-              
-                <!-- {#each edu.highlights as h}
-                <li>{h}</li>
-                {/each} -->
               <span class="text-white/60">{edu.highlights.join(", ")}</span>
-              <time class={` ${c.text} whitespace-nowrap text-sm`}>
-                {edu.startDate} → {edu.endDate}
-              </time>
-              
             </div>
-  
           </div>
           </li>
       {/each}

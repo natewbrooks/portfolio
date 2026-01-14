@@ -58,14 +58,13 @@
             </div>
         {/key}
         <StatusMarquee/>
-        <div class="px-4 lg:px-0 border-light border-t-1 pt-6 ">
-            <p class="pb-4 -z-10">
-                I’m 21 years old and have been <span class="text-green">deeply passionate about programming</span> since I was around 10, when I started building <span>Minecraft plugins</span>.
-                I love learning and building with new tech stacks, and I only sleep comfortably once my <span class="text-orange">current problem is solved</span>.
+        <div class="px-4 lg:px-0 border-light border-t-1 pt-6 text-sm">
+                <p class="pb-4 -z-10">
+                Hello! I’m 21 years old and have been <span class="text-green font-bold">passionate about programming</span> since I was around 10, when I began building <span>Minecraft plugins</span>.
                 <br /><br />
-                Every project teaches me something new. I have a strong passion for <span class="text-purple">UI/UX design</span> and <span class="text-blue">architecting systems</span> that genuinely help others.
-                My goal is simple:
-                <span class="text-pink font-medium">to know I can build anything with absolute confidence.</span>
+                Every project teaches me something new. I enjoy learning new technologies and working across modern stacks. I’m especially drawn to <span class="text-purple font-bold">UI/UX design</span> and <span class="text-blue font-bold">system architecture</span> that solve real problems and scale effectively.
+                <br /><br />
+                <span class="text-pink font-bold">My ultimate goal is to develop software that has a lasting, positive impact.</span> 
             </p>
         </div>
     </header>

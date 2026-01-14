@@ -16,7 +16,7 @@ export const school: SchoolItem[] = [
     endDate: 'May 2026',
     gpa: 3.82,
     highlights: [
-      'All A\'s in major related coursework',
+      'All A\'s in major-related coursework',
       // 'upper-division coursework in operating systems, computer graphics, compilers, databases, and real-time systems',
       // 'Strong emphasis on systems programming, algorithms, and software engineering fundamentals',
       // 'Project-heavy curriculum with focus on correctness, performance, and technical documentation'
