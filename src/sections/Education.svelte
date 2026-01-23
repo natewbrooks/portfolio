@@ -29,7 +29,7 @@
             
             <p>
               <span class="text-white">{edu.major}</span>
-              <span class="text-white/60 ml-2">GPA {edu.gpa}</span>
+              <span class="text-white/60">GPA {edu.gpa}</span>
             </p>
             
             <span class="text-white/50 text-xs mt-1">{edu.highlights.join(" · ")}</span>
