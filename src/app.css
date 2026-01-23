@@ -33,12 +33,13 @@ button {
     outline: none;
 }
 
-button:active {
+@media (min-width: 768px) {
+  button:active {
     scale: 98%;
-}
-
-button:hover {
+  }
+  button:hover {
     opacity: 60%;
+  }
 }
 
 /* Custom Scrollbar */
