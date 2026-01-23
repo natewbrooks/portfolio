@@ -19,7 +19,7 @@
       {#each certifications as cert, i}
       {@const c = COLOR[(Object.keys(COLOR)[i % Object.keys(COLOR).length]) as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} pl-4 gap-2 flex items-center`}>
-          <time class={` ${c.text} font-bold `}>
+          <time class={` ${c.text} font-bold`}>
             {cert.date} • <span class="text-white font-normal">{cert.name}</span>
           </time>
            

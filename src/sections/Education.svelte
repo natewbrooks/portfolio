@@ -20,9 +20,9 @@
         {@const c = COLOR[(Object.keys(COLOR)[i % Object.keys(COLOR).length]) as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
           <div class="flex flex-col w-full">
-            <div class="flex items-baseline gap-2 flex-wrap">
+            <div class="flex gap-2 flex-wrap items-center">
               <span class={`${c.text} font-bold`}>{edu.school} •</span>
-              <time class={`${c.text} opacity-60 text-xs`}>
+              <time class={`${c.text} opacity-60 text-sm`}>
                 {edu.startDate} — {edu.endDate}
               </time>
             </div>
