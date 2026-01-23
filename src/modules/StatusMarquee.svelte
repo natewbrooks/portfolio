@@ -112,12 +112,11 @@
   
   // Create a stable key based on item count to prevent re-renders mid-animation
   let stableKey = $derived(statusItems.length);
-  console.log(statusItems)
 </script>
 
 <div class="overflow-hidden w-full relative">
   {#key stableKey}
-  <Marquee class="[--duration:10s] [--gap:2rem]" pauseOnHover>
+  <Marquee class="[--duration:40s] [--gap:2rem]">
   {#each statusItems as { icon, colorClass, label, status, subLabel }}
     {@const Icon = icon}
     <div class="flex space-x-2 items-center whitespace-nowrap text-sm">

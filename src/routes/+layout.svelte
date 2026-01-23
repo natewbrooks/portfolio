@@ -130,10 +130,14 @@
 			scrolled = true;
 		}
 	})
+
+	if (data?.spotify) setContext('spotify-data', data.spotify);
+	if (data?.github) setContext('github-data', data.github);
 </script>
 
 <svelte:head>
 	<title>nate w. brooks</title>
+	<meta name="description" content="Portfolio site for Nate Brooks – Software Engineer." />
 	<link rel="icon" href={favicon} />
 	<link
 		rel="preload"
@@ -170,7 +174,7 @@
 
 <main class="mx-auto max-w-3xl font-sans h-full w-full text-sm md:text-md">
 	<Header />
-	
+    
 	<div class="relative">
 		{#if isTransitioning}
 			<div 
