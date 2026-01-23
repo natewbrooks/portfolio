@@ -4,6 +4,7 @@
 	import { setContext, onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 	import IconCV from "~icons/tabler/file-cv";
 	import IconHome from "~icons/mdi/home";
 	import Header from '../sections/Header.svelte';
@@ -13,26 +14,31 @@
 	let scrollY: number = $state(0);
 	let windowWidth: number = $state(0);
 	let scrolled: boolean = $state(false);
+	let mounted = $state(false);
 	
 	let isTransitioning = $state(false);
 	let transitionDirection = $state<'to-cv' | 'to-home'>('to-cv');
 	let contentFadingIn = $state(false);
 	
-	// Track current view - initialize based on URL
-	let currentView = $state<'home' | 'cv'>('home');
+	// Track current view - initialize based on URL from page store
+	let currentView = $state<'home' | 'cv'>($page.url.pathname === '/cv' ? 'cv' : 'home');
 	
 	// Sync with initial URL on mount
 	onMount(() => {
+		mounted = true;
 		currentView = window.location.pathname === '/cv' ? 'cv' : 'home';
 		
 		// Handle browser back/forward
-		window.addEventListener('popstate', () => {
+		const handlePopstate = () => {
 			const newView = window.location.pathname === '/cv' ? 'cv' : 'home';
 			if (newView !== currentView) {
 				transitionDirection = newView === 'cv' ? 'to-cv' : 'to-home';
 				isTransitioning = true;
 			}
-		});
+		};
+		
+		window.addEventListener('popstate', handlePopstate);
+		return () => window.removeEventListener('popstate', handlePopstate);
 	});
 
 	// Derive for contexts
@@ -165,10 +171,10 @@
 			class:content-fade-in={contentFadingIn}
 		>
 			<!-- Always render both views, hide inactive one - PDF stays loaded -->
-			<div class:hidden={currentView !== 'home'}>
+			<div style:display={currentView === 'home' ? 'block' : 'none'}>
 				{@render children?.()}
 			</div>
-			<div class:hidden={currentView !== 'cv'}>
+			<div style:display={currentView === 'cv' ? 'block' : 'none'}>
 				<CvView />
 			</div>
 		</div>
