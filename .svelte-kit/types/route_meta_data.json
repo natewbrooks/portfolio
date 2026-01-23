@@ -13,6 +13,9 @@
 	"/api/github/monthly-commits": [
 		"src/routes/api/github/monthly-commits/+server.ts"
 	],
+	"/api/mail/send": [
+		"src/routes/api/mail/send/+server.ts"
+	],
 	"/api/spotify/callback": [
 		"src/routes/api/spotify/callback/+server.ts"
 	],
@@ -35,6 +38,9 @@
 		"src/routes/api/spotify/top-week/+server.ts"
 	],
 	"/cv": [
+		"src/routes/+layout.ts"
+	],
+	"/mail": [
 		"src/routes/+layout.ts"
 	]
 }

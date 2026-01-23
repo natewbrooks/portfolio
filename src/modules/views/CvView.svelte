@@ -40,5 +40,5 @@
             </button>
         </div>
     </div>
-    <embed src={pdfUrl} class="w-full h-[100vh] rounded-sm">
+    <embed src={pdfUrl} class="w-full flex-1 rounded-sm" style="min-height: 80vh;">
 </div>

@@ -33,6 +33,8 @@ declare module '$env/static/private' {
 	export const GITHUB_USERNAME: string;
 	export const GITHUB_USER_ID: string;
 	export const GITHUB_TOKEN: string;
+	export const SMTP_USER: string;
+	export const SMTP_PASS: string;
 	export const SHELL: string;
 	export const npm_command: string;
 	export const npm_config_userconfig: string;
@@ -152,6 +154,8 @@ declare module '$env/dynamic/private' {
 		GITHUB_USERNAME: string;
 		GITHUB_USER_ID: string;
 		GITHUB_TOKEN: string;
+		SMTP_USER: string;
+		SMTP_PASS: string;
 		SHELL: string;
 		npm_command: string;
 		npm_config_userconfig: string;

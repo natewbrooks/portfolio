@@ -24,6 +24,7 @@
 		"@sveltejs/vite-plugin-svelte": "^6.1.4",
 		"@tailwindcss/vite": "^4.0.0",
 		"@types/node": "^25.0.1",
+		"@types/nodemailer": "^7.0.5",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^3.0.0",
@@ -44,6 +45,7 @@
 	"dependencies": {
 		"@selemondev/svelte-marquee": "^0.0.3",
 		"clsx": "^2.1.1",
+		"nodemailer": "^7.0.12",
 		"swiper": "^11.2.10",
 		"tailwind-merge": "^3.4.0",
 		"tailwindcss-animate": "^1.0.7",

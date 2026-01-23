@@ -7,24 +7,29 @@
   import StatusMarquee from "../modules/StatusMarquee.svelte";
 
   const getIsOnCvPage = getContext<() => boolean>("isOnCvPage");
+  const getIsOnMailPage = getContext<() => boolean>("isOnMailPage");
   const getIsTransitioningToCv = getContext<() => boolean>("isTransitioningToCv");
   const getIsTransitioningToHome = getContext<() => boolean>("isTransitioningToHome");
+  const getIsTransitioningToMail = getContext<() => boolean>("isTransitioningToMail");
   const navigateToCv = getContext<() => void>("navigateToCv");
   const navigateToHome = getContext<() => void>("navigateToHome");
+  const navigateToMail = getContext<() => void>("navigateToMail");
   
   let isOnCvPage = $derived(getIsOnCvPage?.() ?? false);
+  let isOnMailPage = $derived(getIsOnMailPage?.() ?? false);
   let isTransitioningToCv = $derived(getIsTransitioningToCv?.() ?? false);
   let isTransitioningToHome = $derived(getIsTransitioningToHome?.() ?? false);
+  let isTransitioningToMail = $derived(getIsTransitioningToMail?.() ?? false);
   
-  // CV tab should be "active" (pulled out + dimmed) when:
-  // - On CV page (but NOT if transitioning back to home)
-  // - OR transitioning TO CV page
-  let cvTabActive = $derived((isOnCvPage && !isTransitioningToHome) || isTransitioningToCv);
+  // CV tab should be "active" (dimmed) when on CV page or transitioning to it
+  let cvTabActive = $derived((isOnCvPage && !isTransitioningToHome && !isTransitioningToMail) || isTransitioningToCv);
+  // Mail tab should be "active" (dimmed) when on mail page or transitioning to it
+  let mailTabActive = $derived((isOnMailPage && !isTransitioningToHome && !isTransitioningToCv) || isTransitioningToMail);
   
   let isHoveringPic = $state(false);
   
   function handleProfileClick() {
-    if (isOnCvPage) {
+    if (isOnCvPage || isOnMailPage) {
       navigateToHome?.();
     } else {
       navigateToCv?.();
@@ -32,7 +37,7 @@
   }
 </script>
 
-<header class="sticky top-0 w-full pt-4 md:pt-12 z-30 space-y-2 border-b-2 border-light pb-2 bg-darkest">
+<header class="crt sticky top-0 w-full pt-4 md:pt-12 space-y-2 border-b-2 border-light pb-2 bg-darkest z-30">
   <div class="flex items-start xs:items-center w-full space-x-2 px-4 lg:px-0 flex-row justify-between">
     <div class="flex flex-col justify-end text-start">
       <span class="font-bold text-2xl text-orange">nate w. brooks</span>
@@ -60,10 +65,16 @@
           <IconCV />
         </button>
 
-        <button class="border-l-2 px-2 py-1 sm:py-0.5 border-purple text-purple" name="email">
-          <a href="mailto:natewbrooks@gmail.com" aria-label="email link">
-            <IconMail />
-          </a>
+        <button 
+          class={[
+            "border-l-2 px-2 py-1 sm:py-0.5 border-purple text-purple transition-all duration-500 ease-out cursor-pointer",
+            mailTabActive && "opacity-20"
+          ]}
+          name="email"
+          onclick={() => isOnMailPage ? navigateToHome?.() : navigateToMail?.()}
+          aria-label={isOnMailPage ? "home page link" : "contact page link"}
+        >
+          <IconMail />
         </button>
       </div>
 
@@ -83,7 +94,7 @@
         />
         {#if isHoveringPic}
           <div class="absolute inset-0 flex items-center justify-center bg-darkest/60">
-            {#if isOnCvPage}
+            {#if isOnCvPage || isOnMailPage}
               <IconHome class="w-8 h-8 text-orange opacity-70" />
             {:else}
               <IconCV class="w-8 h-8 text-pink opacity-70" />

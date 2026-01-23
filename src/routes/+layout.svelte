@@ -2,14 +2,16 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon/favicon.ico';
 	import { setContext, onMount } from 'svelte';
-	import { beforeNavigate } from '$app/navigation';
+	import { beforeNavigate, pushState } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import IconCV from "~icons/tabler/file-cv";
 	import IconHome from "~icons/mdi/home";
+	import IconMail from "~icons/uil/envelope";
 	import Header from '../sections/Header.svelte';
 	import CvView from '../modules/views/CvView.svelte';
 	import HomeView from '../modules/views/HomeView.svelte';
+	import MailView from '../modules/views/MailView.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { data }: LayoutProps = $props();
@@ -19,22 +21,28 @@
 	let mounted = $state(false);
 	
 	let isTransitioning = $state(false);
-	let transitionDirection = $state<'to-cv' | 'to-home'>('to-cv');
+	let transitionDirection = $state<'to-cv' | 'to-home' | 'to-mail'>('to-cv');
 	let contentFadingIn = $state(false);
 	
 	// Track current view - initialize based on URL from page store
-	let currentView = $state<'home' | 'cv'>($page.url.pathname === '/cv' ? 'cv' : 'home');
+	function getViewFromPath(path: string): 'home' | 'cv' | 'mail' {
+		if (path === '/cv') return 'cv';
+		if (path === '/mail') return 'mail';
+		return 'home';
+	}
+	
+	let currentView = $state<'home' | 'cv' | 'mail'>(getViewFromPath($page.url.pathname));
 	
 	// Sync with initial URL on mount
 	onMount(() => {
 		mounted = true;
-		currentView = window.location.pathname === '/cv' ? 'cv' : 'home';
+		currentView = getViewFromPath(window.location.pathname);
 		
 		// Handle browser back/forward
 		const handlePopstate = () => {
-			const newView = window.location.pathname === '/cv' ? 'cv' : 'home';
+			const newView = getViewFromPath(window.location.pathname);
 			if (newView !== currentView) {
-				transitionDirection = newView === 'cv' ? 'to-cv' : 'to-home';
+				transitionDirection = newView === 'cv' ? 'to-cv' : newView === 'mail' ? 'to-mail' : 'to-home';
 				isTransitioning = true;
 			}
 		};
@@ -45,11 +53,14 @@
 
 	// Derive for contexts
 	let isOnCvPage = $derived(currentView === 'cv');
+	let isOnMailPage = $derived(currentView === 'mail');
 
 	setContext("hasScrolled", () => scrolled)
 	setContext("isOnCvPage", () => isOnCvPage)
+	setContext("isOnMailPage", () => isOnMailPage)
 	setContext("isTransitioningToCv", () => isTransitioning && transitionDirection === 'to-cv')
 	setContext("isTransitioningToHome", () => isTransitioning && transitionDirection === 'to-home')
+	setContext("isTransitioningToMail", () => isTransitioning && transitionDirection === 'to-mail')
 	
 	// Navigation functions for components
 	function navigateToCv() {
@@ -64,8 +75,15 @@
 		isTransitioning = true;
 	}
 	
+	function navigateToMail() {
+		if (currentView === 'mail' || isTransitioning) return;
+		transitionDirection = 'to-mail';
+		isTransitioning = true;
+	}
+	
 	setContext("navigateToCv", navigateToCv);
 	setContext("navigateToHome", navigateToHome);
+	setContext("navigateToMail", navigateToMail);
 
 	// Intercept SvelteKit navigation - prevent actual page loads
 	beforeNavigate(({ to, cancel }) => {
@@ -74,10 +92,13 @@
 		if (toPath === '/cv' && currentView !== 'cv') {
 			cancel();
 			navigateToCv();
+		} else if (toPath === '/mail' && currentView !== 'mail') {
+			cancel();
+			navigateToMail();
 		} else if (toPath === '/' && currentView !== 'home') {
 			cancel();
 			navigateToHome();
-		} else if (toPath === '/' || toPath === '/cv') {
+		} else if (toPath === '/' || toPath === '/cv' || toPath === '/mail') {
 			// Already on target, just cancel navigation
 			cancel();
 		}
@@ -87,10 +108,13 @@
 		// Update view and URL without reload
 		if (transitionDirection === 'to-cv') {
 			currentView = 'cv';
-			history.pushState({}, '', '/cv');
+			pushState('/cv', {});
+		} else if (transitionDirection === 'to-mail') {
+			currentView = 'mail';
+			pushState('/mail', {});
 		} else {
 			currentView = 'home';
-			history.pushState({}, '', '/');
+			pushState('/', {});
 		}
 		isTransitioning = false;
 		contentFadingIn = true;
@@ -153,13 +177,16 @@
 				class="absolute inset-x-0 top-0 flex items-start justify-center pt-16 "
 			>
 				<div 
-					class={transitionDirection === 'to-cv' ? 'icon-animate-cv' : 'icon-animate-home'}
+					class={transitionDirection === 'to-cv' ? 'icon-animate-cv' : transitionDirection === 'to-mail' ? 'icon-animate-mail' : 'icon-animate-home'}
 					class:text-pink={transitionDirection === 'to-cv'}
 					class:text-orange={transitionDirection === 'to-home'}
+					class:text-purple={transitionDirection === 'to-mail'}
 					onanimationend={handleTransitionEnd}
 				>
 					{#if transitionDirection === 'to-cv'}
 						<IconCV class="w-20 h-20 md:w-28 md:h-28" />
+					{:else if transitionDirection === 'to-mail'}
+						<IconMail class="w-20 h-20 md:w-28 md:h-28" />
 					{:else}
 						<IconHome class="w-20 h-20 md:w-28 md:h-28" />
 					{/if}
@@ -172,12 +199,15 @@
 			class:opacity-0={isTransitioning}
 			class:content-fade-in={contentFadingIn}
 		>
-			<!-- Always render both views, hide inactive one - PDF stays loaded -->
+			<!-- Always render all views, hide inactive ones -->
 			<div style:display={currentView === 'home' ? 'block' : 'none'}>
 				<HomeView spotify={data.spotify} github={data.github} />
 			</div>
 			<div style:display={currentView === 'cv' ? 'block' : 'none'}>
 				<CvView />
+			</div>
+			<div style:display={currentView === 'mail' ? 'block' : 'none'}>
+				<MailView />
 			</div>
 		</div>
 	</div>
@@ -189,6 +219,10 @@
 	}
 	
 	.icon-animate-home {
+		animation: iconFadeIn 0.6s ease-out forwards;
+	}
+	
+	.icon-animate-mail {
 		animation: iconFadeIn 0.6s ease-out forwards;
 	}
 
