@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import Projects from '../sections/Projects.svelte';
-  import Work from '../sections/Work.svelte';
-  import Certifications from '../sections/Certifications.svelte';
-  import About from '../sections/About.svelte';
-  import Education from '../sections/Education.svelte';
+  import { setContext } from "svelte";
+  import Projects from '../../sections/Projects.svelte';
+  import Work from '../../sections/Work.svelte';
+  import Certifications from '../../sections/Certifications.svelte';
+  import About from '../../sections/About.svelte';
+  import Education from '../../sections/Education.svelte';
 
   type SpotifyData = {
     listening?: any;
@@ -19,11 +19,11 @@
   };
 
   let { spotify, github }: { spotify: SpotifyData; github: GitHubData } = $props();
+  
+  // Set contexts for child components
+  setContext('spotify-data', spotify);
+  setContext('github-data', github);
 </script>
-
-<div class="crt-on">
-    <div class="crt-overlay"></div>
-</div>
 
 <br/>
 <div class="px-4 lg:px-0">

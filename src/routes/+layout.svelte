@@ -9,8 +9,10 @@
 	import IconHome from "~icons/mdi/home";
 	import Header from '../sections/Header.svelte';
 	import CvView from '../modules/views/CvView.svelte';
+	import HomeView from '../modules/views/HomeView.svelte';
+	import type { LayoutProps } from './$types';
 
-	let { children } = $props();
+	let { data }: LayoutProps = $props();
 	let scrollY: number = $state(0);
 	let windowWidth: number = $state(0);
 	let scrolled: boolean = $state(false);
@@ -112,8 +114,8 @@
 	<link
 		rel="preload"
 		as="image"
-		href="/images/mrfox.GIF"
-		type="image/gif"
+		href="/images/nate.png"
+		type="image/png"
 	/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -172,7 +174,7 @@
 		>
 			<!-- Always render both views, hide inactive one - PDF stays loaded -->
 			<div style:display={currentView === 'home' ? 'block' : 'none'}>
-				{@render children?.()}
+				<HomeView spotify={data.spotify} github={data.github} />
 			</div>
 			<div style:display={currentView === 'cv' ? 'block' : 'none'}>
 				<CvView />

@@ -54,8 +54,8 @@
             cvTabActive && "-translate-x-2 opacity-50"
           ]}
           name="resume"
-          onclick={() => navigateToCv?.()}
-          aria-label="resume page link"
+          onclick={() => isOnCvPage ? navigateToHome?.() : navigateToCv?.()}
+          aria-label={isOnCvPage ? "home page link" : "resume page link"}
         >
           <IconCV />
         </button>

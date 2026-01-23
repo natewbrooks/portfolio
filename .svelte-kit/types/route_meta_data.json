@@ -1,6 +1,8 @@
 {
 	"/": [
-		"src/routes/+page.ts"
+		"src/routes/+page.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
 	],
 	"/api/github/current-streak": [
 		"src/routes/api/github/current-streak/+server.ts"
@@ -32,5 +34,7 @@
 	"/api/spotify/top-week": [
 		"src/routes/api/spotify/top-week/+server.ts"
 	],
-	"/cv": []
+	"/cv": [
+		"src/routes/+layout.ts"
+	]
 }
