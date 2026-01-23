@@ -28,7 +28,7 @@
                 aria-label="Open resume in new tab"
             >
                 <IconOpenNew class="w-5 h-5" />
-                <span class="hidden sm:inline text-sm">open</span>
+                <span class="hidden sm:inline text-sm">open in new tab</span>
             </a>
             <button 
                 onclick={() => navigateToHome?.()}
