@@ -91,6 +91,7 @@ declare module '$env/static/private' {
 	export const DISPLAY: string;
 	export const npm_lifecycle_event: string;
 	export const SHLVL: string;
+	export const NVM_CD_FLAGS: string;
 	export const MOZ_ENABLE_WAYLAND: string;
 	export const VSCODE_STABLE: string;
 	export const XDG_VTNR: string;
@@ -210,6 +211,7 @@ declare module '$env/dynamic/private' {
 		DISPLAY: string;
 		npm_lifecycle_event: string;
 		SHLVL: string;
+		NVM_CD_FLAGS: string;
 		MOZ_ENABLE_WAYLAND: string;
 		VSCODE_STABLE: string;
 		XDG_VTNR: string;

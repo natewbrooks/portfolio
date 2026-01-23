@@ -54,10 +54,12 @@
 	// Derive for contexts
 	let isOnCvPage = $derived(currentView === 'cv');
 	let isOnMailPage = $derived(currentView === 'mail');
+	let isOnHomePage = $derived(currentView === 'home');
 
 	setContext("hasScrolled", () => scrolled)
 	setContext("isOnCvPage", () => isOnCvPage)
 	setContext("isOnMailPage", () => isOnMailPage)
+	setContext("isOnHomePage", () => isOnHomePage)
 	setContext("isTransitioningToCv", () => isTransitioning && transitionDirection === 'to-cv')
 	setContext("isTransitioningToHome", () => isTransitioning && transitionDirection === 'to-home')
 	setContext("isTransitioningToMail", () => isTransitioning && transitionDirection === 'to-mail')
@@ -146,7 +148,7 @@
 		type="image/png"
 	/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link
 		rel="preload"
 		as="style"
