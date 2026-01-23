@@ -45,7 +45,7 @@
       <span class="font-bold text-2xl text-orange">nate w. brooks</span>
       <h1 class="text-pink">software engineer</h1>
       <h1 class="text-purple">cs @ towson</h1>
-      <div class="group flex text-sm gap-2 py-0.5">
+      <div class="group flex text-[14px] gap-2 py-1">
             <button class="w-fit  sm:py-1 text-white border-orange" name="github">
               <a href="https://github.com/natewbrooks" target="_blank" aria-label="github link">
                 <IconGithub />
