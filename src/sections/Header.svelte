@@ -51,7 +51,7 @@
         <button 
           class={[
             "border-l-2 px-2 py-1 sm:py-0.5 text-pink border-pink transition-all duration-500 ease-out cursor-pointer",
-            cvTabActive && "-translate-x-2 opacity-50"
+            cvTabActive && "opacity-20"
           ]}
           name="resume"
           onclick={() => isOnCvPage ? navigateToHome?.() : navigateToCv?.()}
