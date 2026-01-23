@@ -19,26 +19,22 @@
       {#each education as edu, i}
         {@const c = COLOR[(Object.keys(COLOR)[i % Object.keys(COLOR).length]) as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
-          <div class="flex space-x-2 items-center">
-            <!-- <img src={edu.img} class="w-14 h-14" alt={edu.school + " image"}/> -->
-            <div class="flex flex-col w-full">
-                <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center ">
-                  <span class={`${c.text} font-bold`}>{edu.school}</span>
-                  <time class={` ${c.text} whitespace-nowrap text-xs xs:text-sm `}>
-                    {edu.startDate} → {edu.endDate}
-                  </time>
-                </div>
-                
-                <p>
-                  <span class="text-white">{edu.major}</span>
-                  <span class="text-white/60">GPA {edu.gpa}</span>
-                </p>
-              
-              <span class="text-white/60">{edu.highlights.join(", ")}</span>
+          <div class="flex flex-col w-full">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class={`${c.text} font-bold`}>{edu.school} |</span>
+              <time class={`${c.text} opacity-60 text-xs`}>
+                {edu.startDate} — {edu.endDate}
+              </time>
             </div>
-  
+            
+            <p>
+              <span class="text-white">{edu.major}</span>
+              <span class="text-white/60 ml-2">GPA {edu.gpa}</span>
+            </p>
+            
+            <span class="text-white/50 text-xs mt-1">{edu.highlights.join(" · ")}</span>
           </div>
-          </li>
+        </li>
       {/each}
     </ul>
   </div>

@@ -1,7 +1,6 @@
 <script lang="ts">
     import type { PageProps } from './$types';
 	import Projects from '../sections/Projects.svelte';
-	import Header from '../sections/Header.svelte';
 	import Work from '../sections/Work.svelte';
 	import Certifications from '../sections/Certifications.svelte';
     import { setContext } from 'svelte';
@@ -13,12 +12,6 @@
     setContext('github-data', data.github)
 </script>
 
-
-<div class="crt-on">
-    <div class="crt-overlay"></div>
-</div>
-
-<Header/>
 <br/>
 <div class="px-4 lg:px-0">
     <div class="py-2 md:px-0">

@@ -1,11 +1,6 @@
-<script>
-	import Header from "../../sections/Header.svelte";
+<script lang="ts">
+  // This page is only used for direct URL access to /cv
+  // The actual CV view is rendered by the layout when currentView === 'cv'
 </script>
-<Header/>
-<div class="relative py-4 px-4 h-full flex flex-col space-y-2 min-h-screen">
-    <div class="sticky top-0 w-full flex items-center justify-between bg-darkest py-2">
-        <h1 class="">Nathaniel Brooks Resume</h1>
-        <a href="/" class="text-pink">return</a>
-    </div>
-    <embed src={"NathanielBrooksResume.pdf"} class="w-full h-[100vh]">
-</div>
+
+<!-- Content is rendered by layout -->

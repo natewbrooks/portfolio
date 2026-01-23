@@ -109,13 +109,17 @@
 
     return items;
   });
+  
+  // Create a stable key based on item count to prevent re-renders mid-animation
+  let stableKey = $derived(statusItems.length);
 </script>
 
 <div class="overflow-hidden w-full relative">
-  <Marquee class="[--duration:40s]">
+  {#key stableKey}
+  <Marquee class="[--duration:10s] [--gap:2rem]" pauseOnHover>
   {#each statusItems as { icon, colorClass, label, status, subLabel }}
     {@const Icon = icon}
-    <div class="flex space-x-2 items-center">
+    <div class="flex space-x-2 items-center whitespace-nowrap text-sm">
       <Icon class={colorClass}/>
       <p class={colorClass}>
         <span class="">{label.toLowerCase()}</span>
@@ -126,7 +130,8 @@
       </p>
     </div>
   {/each}
-</Marquee>  
+</Marquee>
+  {/key}
 <div
     class="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-darkest"
   ></div>

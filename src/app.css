@@ -41,6 +41,31 @@ button:hover {
     opacity: 60%;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 1px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
 :root {
   --ease-out-quint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
   --ease-in-quint: cubic-bezier(0.755, 0.050, 0.855, 0.060);
