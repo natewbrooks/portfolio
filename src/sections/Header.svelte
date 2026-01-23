@@ -26,8 +26,6 @@
   // Mail tab should be "active" (dimmed) when on mail page or transitioning to it
   let mailTabActive = $derived((isOnMailPage && !isTransitioningToHome && !isTransitioningToCv) || isTransitioningToMail);
   
-  let isHoveringPic = $state(false);
-  
   function handleProfileClick() {
     if (isOnCvPage || isOnMailPage) {
       navigateToHome?.();
@@ -81,8 +79,6 @@
       <button
         onclick={handleProfileClick}
         class="relative h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10 cursor-pointer"
-        onmouseenter={() => isHoveringPic = true}
-        onmouseleave={() => isHoveringPic = false}
       >
         <img
           src="images/nate.png"
@@ -92,15 +88,6 @@
           decoding="async"
           fetchpriority="high"
         />
-        {#if isHoveringPic}
-          <div class="absolute inset-0 flex items-center justify-center bg-darkest/60">
-            {#if isOnCvPage || isOnMailPage}
-              <IconHome class="w-8 h-8 text-orange opacity-70" />
-            {:else}
-              <IconCV class="w-8 h-8 text-pink opacity-70" />
-            {/if}
-          </div>
-        {/if}
       </button>
     </div>
   </div>
