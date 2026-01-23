@@ -112,6 +112,7 @@
   
   // Create a stable key based on item count to prevent re-renders mid-animation
   let stableKey = $derived(statusItems.length);
+  console.log(statusItems)
 </script>
 
 <div class="overflow-hidden w-full relative">

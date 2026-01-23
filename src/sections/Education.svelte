@@ -21,12 +21,8 @@
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
           <div class="flex flex-col w-full">
             <div class="flex gap-2 flex-wrap items-center">
-              <span class={`${c.text} font-bold`}>{edu.school} •</span>
-              <time class={`${c.text} opacity-60 text-sm`}>
-                {edu.startDate} — {edu.endDate}
-              </time>
+              <span class={`${c.text} font-bold`}>{edu.school} • <span class={`${c.text} opacity-60`}>{edu.startDate} — {edu.endDate}</span></span>
             </div>
-            
             <p>
               <span class="text-white">{edu.major}</span>
               <span class="text-white/60">GPA {edu.gpa}</span>
