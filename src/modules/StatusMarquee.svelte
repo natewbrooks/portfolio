@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { Marquee } from "@selemondev/svelte-marquee";
+  // import { Marquee } from "@selemondev/svelte-marquee";
+  import Marquee from "../utils/Marquee.svelte"
   import type { StatusItem } from "$lib/types/status";
 
   import IconSpotify from "~icons/mdi/spotify";
@@ -110,7 +111,8 @@
   });
 </script>
 
-<Marquee fade={true} reverse={true} numberOfCopies={3}>
+<div class="overflow-hidden w-full relative">
+  <Marquee class="[--duration:40s]">
   {#each statusItems as { icon, colorClass, label, status, subLabel }}
     {@const Icon = icon}
     <div class="flex space-x-2 items-center">
@@ -124,4 +126,11 @@
       </p>
     </div>
   {/each}
-</Marquee>
+</Marquee>  
+<div
+    class="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-darkest"
+  ></div>
+  <div
+    class="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-darkest"
+  ></div>
+</div>

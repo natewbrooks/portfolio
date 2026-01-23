@@ -138,6 +138,17 @@
   function prevSlide() {
     swiperInstance?.slidePrev();
   }
+
+  function scrollToProject(projectName: string) {
+    const index = projects.findIndex(
+      (p: any) => p.name.toLowerCase() === projectName.toLowerCase()
+    );
+    if (index !== -1 && swiperInstance) {
+      swiperInstance.slideTo(index);
+    }
+  }
+
+  export { scrollToProject };
 </script>
 
 <div class="relative">

@@ -19,12 +19,12 @@
       {#each workExperience as work}
         {@const c = COLOR[work.colorClass as keyof typeof COLOR]}
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
-            <div class="w-full flex flex-col xs:flex-row xs:justify-between xs:items-center">
+            <div class="w-full flex flex-col sm:flex-row sm:justify-between sm:items-center">
                 <span class={`${c.text} whitespace-nowrap font-bold`}>
                   {work.company}
                 </span>
 
-                <time class={` ${c.text} whitespace-nowrap text-xs xs:text-sm sm:text-md`}>
+                <time class={` ${c.text} whitespace-nowrap text-xs xs:text-sm`}>
                   {work.date.start} → {work.date.end}
                 </time>
               </div>

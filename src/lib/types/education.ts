@@ -1,4 +1,4 @@
-export type SchoolItem = {
+export type EducationItem = {
   school: string
   major: string
   startDate: string
@@ -8,7 +8,7 @@ export type SchoolItem = {
   img: string
 }
 
-export const school: SchoolItem[] = [
+export const education: EducationItem[] = [
   {
     school: 'Towson University',
     major: 'Computer Science',

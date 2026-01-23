@@ -5,7 +5,7 @@
   import StatusMarquee from "../modules/StatusMarquee.svelte";
 </script>
 
-<header class="sticky top-0 w-full pt-4 md:pt-12 z-30 space-y-4 border-b-1 border-light pb-2 bg-darkest">
+<header class="sticky top-0 w-full pt-4 md:pt-12 z-30 space-y-2 border-b-1 border-light pb-1 bg-darkest">
   <div class="flex items-start xs:items-center w-full space-x-2 px-4 lg:px-0 flex-row justify-between">
     <div class="flex flex-col justify-end text-start">
       <span class="font-bold text-2xl text-orange">nate w. brooks</span>
