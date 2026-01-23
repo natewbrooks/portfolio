@@ -50,7 +50,7 @@
       {#each projects as project}
       {@const c = yearStyles(project.year)}
       <li class={`group border-l-2 pl-4 py-2 ${c.border}`} id={"project-" + project.name.toLowerCase().replace(/\s+/g, '-')}>
-          <span class={`${yearStyles(project.year).text} `}>{project.year}</span>
+          <span class={`${yearStyles(project.year).text} font-bold`}>{project.year} •</span>
           <a href={project.link} target="_blank" 
              onmouseenter={() => {
               setHighlighted(project.name);

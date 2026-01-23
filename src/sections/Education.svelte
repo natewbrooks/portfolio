@@ -21,7 +21,7 @@
         <li class={`border-l-2 ${c.border} px-4 py-2`}>
           <div class="flex flex-col w-full">
             <div class="flex items-baseline gap-2 flex-wrap">
-              <span class={`${c.text} font-bold`}>{edu.school} |</span>
+              <span class={`${c.text} font-bold`}>{edu.school} •</span>
               <time class={`${c.text} opacity-60 text-xs`}>
                 {edu.startDate} — {edu.endDate}
               </time>

@@ -22,7 +22,7 @@
             <div class="w-full flex flex-col">
                 <div class="flex items-baseline gap-2 flex-wrap">
                   <span class={`${c.text} font-bold`}>
-                    {work.company} |
+                    {work.company} •
                   </span>
                   <time class={`${c.text} opacity-60 text-xs`}>
                     {work.date.start} — {work.date.end}

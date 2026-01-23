@@ -6,6 +6,6 @@ export type Certification = {
 export const certifications: Certification[] = [
     {
         name: "Oracle Certified Associate, Java SE 8 Programmer",
-        date: "July 2023"
+        date: "2023"
     }
 ]
