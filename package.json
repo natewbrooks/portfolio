@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"start": "node build",
 		"prebuild": "node src/lib/scripts/optimize-images.mjs",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
