@@ -37,12 +37,13 @@
     const items: StatusItem[] = [];
 
     if (spotify?.listening?.name) {
+      const artists = Array.isArray(spotify.listening.artists) ? spotify.listening.artists : [];
       items.push({
         icon: IconSpotify,
         colorClass: "text-green",
         label: spotify.listening.isPlaying ? "listening to:" : "last played:",
         status: spotify.listening.name,
-        subLabel: `- ${spotify.listening.artists.join(", ")}`
+        subLabel: artists.length ? `- ${artists.join(", ")}` : undefined
       });
     }
 
@@ -56,12 +57,13 @@
     }
 
     if (spotify?.topWeek?.name) {
+      const artists = Array.isArray(spotify.topWeek.artists) ? spotify.topWeek.artists : [];
       items.push({
         icon: IconTrophy,
         colorClass: "text-blue",
         label: "song of the week:",
         status: spotify.topWeek.name,
-        subLabel: `- ${spotify.topWeek.artists.join(", ")}`
+        subLabel: artists.length ? `- ${artists.join(", ")}` : undefined
       });
     }
 
