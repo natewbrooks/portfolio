@@ -49,6 +49,7 @@ declare module '$env/static/private' {
 	export const npm_config_local_prefix: string;
 	export const LIBVA_DRIVER_NAME: string;
 	export const DESKTOP_SESSION: string;
+	export const KITTY_PID: string;
 	export const HL_INITIAL_WORKSPACE_TOKEN: string;
 	export const NO_AT_BRIDGE: string;
 	export const npm_config_globalconfig: string;
@@ -56,11 +57,12 @@ declare module '$env/static/private' {
 	export const EDITOR: string;
 	export const XDG_SEAT: string;
 	export const PWD: string;
-	export const XDG_SESSION_DESKTOP: string;
 	export const LOGNAME: string;
+	export const XDG_SESSION_DESKTOP: string;
 	export const XDG_SESSION_TYPE: string;
 	export const npm_config_init_module: string;
 	export const _: string;
+	export const KITTY_PUBLIC_KEY: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const MOTD_SHOWN: string;
 	export const GDM_LANG: string;
@@ -72,6 +74,7 @@ declare module '$env/static/private' {
 	export const npm_package_version: string;
 	export const PYTHONSTARTUP: string;
 	export const WAYLAND_DISPLAY: string;
+	export const KITTY_WINDOW_ID: string;
 	export const GIT_ASKPASS: string;
 	export const INIT_CWD: string;
 	export const CHROME_DESKTOP: string;
@@ -81,6 +84,7 @@ declare module '$env/static/private' {
 	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 	export const npm_config_npm_version: string;
 	export const XDG_SESSION_CLASS: string;
+	export const TERMINFO: string;
 	export const TERM: string;
 	export const npm_package_name: string;
 	export const PYTHON_BASIC_REPL: string;
@@ -110,8 +114,9 @@ declare module '$env/static/private' {
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
 	export const npm_config_global_prefix: string;
-	export const MAIL: string;
 	export const NVM_BIN: string;
+	export const MAIL: string;
+	export const KITTY_INSTALLATION_DIR: string;
 	export const npm_node_execpath: string;
 	export const npm_config_engine_strict: string;
 	export const HYPRCURSOR_SIZE: string;
@@ -169,6 +174,7 @@ declare module '$env/dynamic/private' {
 		npm_config_local_prefix: string;
 		LIBVA_DRIVER_NAME: string;
 		DESKTOP_SESSION: string;
+		KITTY_PID: string;
 		HL_INITIAL_WORKSPACE_TOKEN: string;
 		NO_AT_BRIDGE: string;
 		npm_config_globalconfig: string;
@@ -176,11 +182,12 @@ declare module '$env/dynamic/private' {
 		EDITOR: string;
 		XDG_SEAT: string;
 		PWD: string;
-		XDG_SESSION_DESKTOP: string;
 		LOGNAME: string;
+		XDG_SESSION_DESKTOP: string;
 		XDG_SESSION_TYPE: string;
 		npm_config_init_module: string;
 		_: string;
+		KITTY_PUBLIC_KEY: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		MOTD_SHOWN: string;
 		GDM_LANG: string;
@@ -192,6 +199,7 @@ declare module '$env/dynamic/private' {
 		npm_package_version: string;
 		PYTHONSTARTUP: string;
 		WAYLAND_DISPLAY: string;
+		KITTY_WINDOW_ID: string;
 		GIT_ASKPASS: string;
 		INIT_CWD: string;
 		CHROME_DESKTOP: string;
@@ -201,6 +209,7 @@ declare module '$env/dynamic/private' {
 		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 		npm_config_npm_version: string;
 		XDG_SESSION_CLASS: string;
+		TERMINFO: string;
 		TERM: string;
 		npm_package_name: string;
 		PYTHON_BASIC_REPL: string;
@@ -230,8 +239,9 @@ declare module '$env/dynamic/private' {
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
 		npm_config_global_prefix: string;
-		MAIL: string;
 		NVM_BIN: string;
+		MAIL: string;
+		KITTY_INSTALLATION_DIR: string;
 		npm_node_execpath: string;
 		npm_config_engine_strict: string;
 		HYPRCURSOR_SIZE: string;

@@ -28,7 +28,7 @@
               <span class="text-white/60">GPA {edu.gpa}</span>
             </p>
             
-            <span class="text-white/50 text-xs mt-1">{edu.highlights.join(" · ")}</span>
+            <span class="text-white/50">{edu.highlights.join(" · ")}</span>
           </div>
         </li>
       {/each}
