@@ -170,9 +170,9 @@
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
 
-<div class="crt-on">
+<!-- <div class="crt-on">
     <div class="crt-overlay"></div>
-</div>
+</div> -->
 
 <main class="mx-auto max-w-3xl font-sans h-full w-full text-sm md:text-md">
 	<Header />
