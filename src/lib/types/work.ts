@@ -12,9 +12,9 @@ export type WorkItem = {
 
 export const workExperience: WorkItem[] = [
     {
-    title: "Full Stack Engineer",
+    title: "Software Engineer Intern",
     colorClass: "purple",
-    company: "GoPanda (Contract)",
+    company: "GoPanda",
     date: {
       start: "Nov 2025",
       end: "Present"
