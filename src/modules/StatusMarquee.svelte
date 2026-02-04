@@ -119,25 +119,21 @@
 <div class="overflow-hidden w-full relative">
   {#key stableKey}
   <Marquee class="[--duration:40s] [--gap:2rem]">
-  {#each statusItems as { icon, colorClass, label, status, subLabel }}
-    {@const Icon = icon}
-    <div class="flex space-x-2 items-center whitespace-nowrap">
-      <Icon class={colorClass}/>
-      <p class={colorClass}>
-        <span class="">{label.toLowerCase()}</span>
-        <span class="text-white">{status.toLowerCase()}</span>
-        {#if subLabel}
-          <span class={colorClass}>{subLabel.toLowerCase()}</span>
-        {/if}
-      </p>
-    </div>
-  {/each}
-</Marquee>
+    {#each statusItems as { icon, colorClass, label, status, subLabel }}
+      {@const Icon = icon}
+      <div class="flex space-x-2 items-center whitespace-nowrap">
+        <Icon class={colorClass}/>
+        <p class={colorClass}>
+          <span class="">{label.toLowerCase()}</span>
+          <span class="text-white">{status.toLowerCase()}</span>
+          {#if subLabel}
+            <span class={colorClass}>{subLabel.toLowerCase()}</span>
+          {/if}
+        </p>
+      </div>
+    {/each}
+  </Marquee>
   {/key}
-<div
-    class="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-darkest"
-  ></div>
-  <div
-    class="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-darkest"
-  ></div>
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-darkest"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-darkest"></div>
 </div>
