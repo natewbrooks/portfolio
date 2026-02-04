@@ -8,29 +8,19 @@ export default {
   theme: {
 		extend: {
 			keyframes: {
-				'marquee-left': {
-					from: { transform: 'translateX(0)' },
-					to: { transform: 'translateX(calc(-100% - var(--gap)))' }
-				},
-				'marquee-up': {
-					from: { transform: 'translateY(0)' },
-					to: { transform: 'translateY(calc(-100% - var(--gap)))' }
-				},
 				'marquee': {
-					from: { transform: "translateX(0)" },
-					to: { transform: "translateX(calc(-100% - var(--gap)))" },
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-100%)' },
 				},
-				"marquee-vertical": {
-					from: { transform: "translateY(0)" },
-					to: { transform: "translateY(calc(-100% - var(--gap)))" },
+				'marquee-vertical': {
+					'0%': { transform: 'translateY(0%)' },
+					'100%': { transform: 'translateY(-100%)' },
 				},
 			},
 			animation: {
-				'marquee-left': 'marquee-left var(--duration, 40s) linear infinite',
-				'marquee-up': 'marquee-up var(--duration, 40s) linear infinite',
-				'marquee': "marquee var(--duration) linear infinite",
-				'marquee-vertical': "marquee-vertical var(--duration) linear infinite",
-			}
+				'marquee': 'marquee var(--duration, 40s) linear infinite',
+				'marquee-vertical': 'marquee-vertical var(--duration, 40s) linear infinite',
+			},
 		}
 	},
 	plugins: [animate]
