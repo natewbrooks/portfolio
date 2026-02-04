@@ -1,4 +1,4 @@
-<div class="text-md">
+<div class="">
     <p class="pb-4 -z-10">
         <!-- Hello! I’m 21 years old and have been <span class="text-green font-bold">passionate about programming</span> since I was around 10, when I began building <span>Minecraft plugins</span>. -->
         <!-- <br /><br /> -->
