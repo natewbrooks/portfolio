@@ -121,7 +121,7 @@
   <Marquee class="[--duration:40s] [--gap:2rem]">
   {#each statusItems as { icon, colorClass, label, status, subLabel }}
     {@const Icon = icon}
-    <div class="flex space-x-2 items-center whitespace-nowrap text-sm">
+    <div class="flex space-x-2 items-center whitespace-nowrap">
       <Icon class={colorClass}/>
       <p class={colorClass}>
         <span class="">{label.toLowerCase()}</span>
