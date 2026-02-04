@@ -22,7 +22,8 @@
 	
 	let isTransitioning = $state(false);
 	let transitionDirection = $state<'to-cv' | 'to-home' | 'to-mail'>('to-cv');
-	let contentVisible = $state(true);  // New: controls content visibility
+	let contentVisible = $state(true);
+	let contentFadingOut = $state(false);
 	let contentFadingIn = $state(false);
 	
 	// Track current view - initialize based on URL from page store
@@ -65,34 +66,36 @@
 	setContext("isTransitioningToHome", () => isTransitioning && transitionDirection === 'to-home')
 	setContext("isTransitioningToMail", () => isTransitioning && transitionDirection === 'to-mail')
 	
-	// Unified transition starter - hides content first, then shows icon
+	// Unified transition starter - fades out content, then shows icon
 	function startTransition() {
 		if (isTransitioning) return;
 		
-		// Immediately hide content
-		contentVisible = false;
+		// Start fade out
+		contentFadingOut = true;
 		
-		// Start icon animation on next frame (ensures content is hidden first)
-		requestAnimationFrame(() => {
+		// After fade out completes, hide content and show icon
+		setTimeout(() => {
+			contentVisible = false;
+			contentFadingOut = false;
 			isTransitioning = true;
-		});
+		}, 150); // Match the fade-out duration
 	}
 	
 	// Navigation functions for components
 	function navigateToCv() {
-		if (currentView === 'cv' || isTransitioning) return;
+		if (currentView === 'cv' || isTransitioning || contentFadingOut) return;
 		transitionDirection = 'to-cv';
 		startTransition();
 	}
 	
 	function navigateToHome() {
-		if (currentView === 'home' || isTransitioning) return;
+		if (currentView === 'home' || isTransitioning || contentFadingOut) return;
 		transitionDirection = 'to-home';
 		startTransition();
 	}
 	
 	function navigateToMail() {
-		if (currentView === 'mail' || isTransitioning) return;
+		if (currentView === 'mail' || isTransitioning || contentFadingOut) return;
 		transitionDirection = 'to-mail';
 		startTransition();
 	}
@@ -115,7 +118,6 @@
 			cancel();
 			navigateToHome();
 		} else if (toPath === '/' || toPath === '/cv' || toPath === '/mail') {
-			// Already on target, just cancel navigation
 			cancel();
 		}
 	});
@@ -147,7 +149,6 @@
 	}
 
 	$effect(() => {
-		// do not reset when reaching top
 		if(!scrolled && scrollY > 10 && windowWidth < 800) {
 			scrolled = true;
 		}
@@ -182,7 +183,7 @@
 				class="absolute inset-x-0 top-0 flex items-start justify-center pt-16 z-10"
 			>
 				<div 
-					class={transitionDirection === 'to-cv' ? 'icon-animate-cv' : transitionDirection === 'to-mail' ? 'icon-animate-mail' : 'icon-animate-home'}
+					class="icon-animate"
 					class:text-pink={transitionDirection === 'to-cv'}
 					class:text-orange={transitionDirection === 'to-home'}
 					class:text-purple={transitionDirection === 'to-mail'}
@@ -199,12 +200,12 @@
 			</div>
 		{/if}
 		
-		<!-- Content container: use visibility instead of opacity for guaranteed hiding -->
 		<div 
+			class:content-fade-out={contentFadingOut}
 			class:content-fade-in={contentFadingIn}
+			class:content-hidden={!contentVisible}
 			style:visibility={contentVisible ? 'visible' : 'hidden'}
 		>
-			<!-- Always render all views, hide inactive ones -->
 			<div style:display={currentView === 'home' ? 'block' : 'none'}>
 				<HomeView spotify={data.spotify} github={data.github} />
 			</div>
@@ -219,9 +220,7 @@
 </main>
 
 <style>
-	.icon-animate-cv,
-	.icon-animate-home,
-	.icon-animate-mail {
+	.icon-animate {
 		animation: iconFadeIn 0.6s ease-out forwards;
 	}
 
@@ -240,6 +239,21 @@
 		}
 	}
 
+	.content-fade-out {
+		animation: contentFadeOut 0.15s ease-out forwards;
+	}
+
+	@keyframes contentFadeOut {
+		0% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+	}
+
 	.content-fade-in {
 		animation: contentFadeIn 0.3s ease-out forwards;
 	}
@@ -253,5 +267,11 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+	}
+
+	.content-hidden :global(svg),
+	.content-hidden :global(img) {
+		visibility: hidden !important;
+		opacity: 0 !important;
 	}
 </style>

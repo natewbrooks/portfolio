@@ -3,7 +3,7 @@
   import IconGithub from "~icons/mdi/github";
   import IconMail from "~icons/uil/envelope";
   import IconCV from "~icons/tabler/file-cv";
-  import IconLinkedin from "~icons/mdi/linkedin"
+  import IconLinkedin from "~icons/mdi/linkedin";
   import IconHome from "~icons/mdi/home";
   import StatusMarquee from "../modules/StatusMarquee.svelte";
 
@@ -25,10 +25,52 @@
   let isTransitioningToMail = $derived(getIsTransitioningToMail?.() ?? false);
   
   let homeTabActive = $derived((isOnHomePage && !isTransitioningToCv && !isTransitioningToMail) || isTransitioningToHome);
-  // CV tab should be "active" (dimmed) when on CV page or transitioning to it
   let cvTabActive = $derived((isOnCvPage && !isTransitioningToHome && !isTransitioningToMail) || isTransitioningToCv);
-  // Mail tab should be "active" (dimmed) when on mail page or transitioning to it
   let mailTabActive = $derived((isOnMailPage && !isTransitioningToHome && !isTransitioningToCv) || isTransitioningToMail);
+  
+  // Social links (external)
+  const socialLinks = [
+    { 
+      icon: IconGithub, 
+      href: "https://github.com/natewbrooks", 
+      label: "GitHub",
+      colorClass: "text-white"
+    },
+    { 
+      icon: IconLinkedin, 
+      href: "https://www.linkedin.com/in/nate-brooks-7b16382b2/", 
+      label: "LinkedIn",
+      colorClass: "text-blue"
+    },
+  ];
+
+  // Navigation tabs (internal)
+  const navTabs = [
+    {
+      icon: IconHome,
+      name: "home",
+      colorClass: "text-orange border-orange",
+      getIsActive: () => homeTabActive,
+      onClick: () => !isOnHomePage && navigateToHome?.(),
+      getAriaLabel: () => isOnHomePage ? "home page (active)" : "home page"
+    },
+    {
+      icon: IconCV,
+      name: "resume",
+      colorClass: "text-pink border-pink",
+      getIsActive: () => cvTabActive,
+      onClick: () => isOnCvPage ? navigateToHome?.() : navigateToCv?.(),
+      getAriaLabel: () => isOnCvPage ? "home page" : "resume page"
+    },
+    {
+      icon: IconMail,
+      name: "email",
+      colorClass: "text-purple border-purple",
+      getIsActive: () => mailTabActive,
+      onClick: () => isOnMailPage ? navigateToHome?.() : navigateToMail?.(),
+      getAriaLabel: () => isOnMailPage ? "home page" : "contact page"
+    },
+  ];
   
   function handleProfileClick() {
     if (isOnCvPage || isOnMailPage) {
@@ -41,61 +83,59 @@
 
 <header class="crt sticky top-0 w-full pt-4 md:pt-12 space-y-2 border-b-2 border-light pb-2 bg-darkest z-30">
   <div class="flex items-center w-full space-x-2 px-4 lg:px-0 flex-row justify-between">
-    <div class="flex flex-col justify-center text-start ">
+    <div class="flex flex-col justify-center text-start">
       <span class="font-bold text-[20px] text-orange">nate w. brooks</span>
       <h1 class="text-pink font-bold">software engineer</h1>
       <h1 class="text-purple font-bold">cs @ towson</h1>
+      
       <div class="group flex text-[18px] gap-2 pt-1">
-            <button class="w-fit  sm:py-1 text-white border-orange" name="github">
-              <a href="https://github.com/natewbrooks" target="_blank" aria-label="github link">
-                <IconGithub />
-              </a>
-          </button>
-          <button class="w-fit sm:py-1 text-blue border-blue" name="github">
-              <a href="https://www.linkedin.com/in/nate-brooks-7b16382b2/" target="_blank" aria-label="github link">
-                <IconLinkedin />
-              </a>
-          </button>
-        </div>
-
+        {#each socialLinks as { icon: Icon, href, label, colorClass }}
+          <a 
+            {href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label={label}
+            class={`w-fit sm:py-1 ${colorClass}`}
+          >
+            <Icon />
+          </a>
+        {/each}
+      </div>
     </div>
 
     <div class="group flex justify-end">
       <div class="sm:text-[20px] flex flex-col w-fit justify-end items-center text-xl">
-        <button 
-          class={[
-            "border-l-2 px-2 py-1 sm:py-0.5 text-orange border-orange transition-all duration-500 ease-out cursor-pointer",
-            homeTabActive ? "opacity-20" : ""
-          ]}
-          name="home"
-          onclick={() => isOnHomePage ? undefined : navigateToHome?.()}
-          aria-label={isOnHomePage ? "home page link (active)" : "home page link"}
-        >
-          <IconHome />
-        </button>
-        <button 
-          class={[
-            "border-l-2 px-2 py-1 sm:py-0.5 text-pink border-pink transition-all duration-500 ease-out cursor-pointer",
-            cvTabActive && "opacity-20"
-          ]}
-          name="resume"
-          onclick={() => isOnCvPage ? navigateToHome?.() : navigateToCv?.()}
-          aria-label={isOnCvPage ? "home page link" : "resume page link"}
-        >
-          <IconCV />
-        </button>
-
-        <button 
-          class={[
-            "border-l-2 px-2 py-1 sm:py-0.5 border-purple text-purple transition-all duration-500 ease-out cursor-pointer",
-            mailTabActive && "opacity-20"
-          ]}
-          name="email"
-          onclick={() => isOnMailPage ? navigateToHome?.() : navigateToMail?.()}
-          aria-label={isOnMailPage ? "home page link" : "contact page link"}
-        >
-          <IconMail />
-        </button>
+        {#each navTabs as { icon: Icon, name, colorClass, getIsActive, onClick, getAriaLabel }}
+          <button 
+            onclick={onClick}
+            class={[
+              "relative px-2 py-1 sm:py-0.5 transition-all duration-300 ease-out cursor-pointer",
+              colorClass,
+              getIsActive() && ""
+            ]}
+          >
+            <span 
+              class={[
+                "absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-current transition-all duration-300",
+                getIsActive() && "h-full"
+              ]}
+            ></span>
+            <Icon />
+          </button>
+          <!-- Glow effect -->
+          <!-- <button 
+            onclick={onClick}
+            class={[
+              "px-2 py-1 sm:py-0.5 transition-all duration-300 ease-out cursor-pointer",
+              colorClass,
+              getIsActive() 
+                ? "drop-shadow-[0_0_8px_currentColor] scale-110" 
+                : "opacity-50 hover:opacity-100"
+            ]}
+          >
+            <Icon />
+          </button> -->
+        {/each}
       </div>
 
       <button
