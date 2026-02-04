@@ -75,7 +75,7 @@
       <p class="text-white/60">Thanks for reaching out. I'll get back to you soon.</p>
       <button 
         onclick={resetForm}
-        class="mt-4 px-4 py-2 border border-purple text-purple hover:bg-purple/10 transition-colors rounded"
+        class="mt-4 flex items-center justify-center space-x-2 px-4 py-3 bg-purple text-darkest font-bold rounded hover:bg-purple/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Send another message
       </button>
