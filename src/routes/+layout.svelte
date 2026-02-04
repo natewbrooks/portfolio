@@ -22,6 +22,7 @@
 	
 	let isTransitioning = $state(false);
 	let transitionDirection = $state<'to-cv' | 'to-home' | 'to-mail'>('to-cv');
+	let contentVisible = $state(true);  // New: controls content visibility
 	let contentFadingIn = $state(false);
 	
 	// Track current view - initialize based on URL from page store
@@ -43,7 +44,7 @@
 			const newView = getViewFromPath(window.location.pathname);
 			if (newView !== currentView) {
 				transitionDirection = newView === 'cv' ? 'to-cv' : newView === 'mail' ? 'to-mail' : 'to-home';
-				isTransitioning = true;
+				startTransition();
 			}
 		};
 		
@@ -64,23 +65,36 @@
 	setContext("isTransitioningToHome", () => isTransitioning && transitionDirection === 'to-home')
 	setContext("isTransitioningToMail", () => isTransitioning && transitionDirection === 'to-mail')
 	
+	// Unified transition starter - hides content first, then shows icon
+	function startTransition() {
+		if (isTransitioning) return;
+		
+		// Immediately hide content
+		contentVisible = false;
+		
+		// Start icon animation on next frame (ensures content is hidden first)
+		requestAnimationFrame(() => {
+			isTransitioning = true;
+		});
+	}
+	
 	// Navigation functions for components
 	function navigateToCv() {
 		if (currentView === 'cv' || isTransitioning) return;
 		transitionDirection = 'to-cv';
-		isTransitioning = true;
+		startTransition();
 	}
 	
 	function navigateToHome() {
 		if (currentView === 'home' || isTransitioning) return;
 		transitionDirection = 'to-home';
-		isTransitioning = true;
+		startTransition();
 	}
 	
 	function navigateToMail() {
 		if (currentView === 'mail' || isTransitioning) return;
 		transitionDirection = 'to-mail';
-		isTransitioning = true;
+		startTransition();
 	}
 	
 	setContext("navigateToCv", navigateToCv);
@@ -118,10 +132,16 @@
 			currentView = 'home';
 			pushState('/', {});
 		}
+		
 		isTransitioning = false;
-		contentFadingIn = true;
+		
 		// Scroll to top on view change
 		window.scrollTo({ top: 0, behavior: 'instant' });
+		
+		// Fade content back in
+		contentFadingIn = true;
+		contentVisible = true;
+		
 		// Reset fade-in state after animation completes
 		setTimeout(() => contentFadingIn = false, 300);
 	}
@@ -149,30 +169,9 @@
 	/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<!-- <link
-		rel="preload"
-		as="style"
-		href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap"
-	/>
-	<link
-		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap"
-		media="print"
-	/>
-	<noscript>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap"
-		/>
-	</noscript> -->
-
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY={scrollY} />
-
-<!-- <div class="crt-on">
-    <div class="crt-overlay"></div>
-</div> -->
 
 <main class="mx-auto max-w-3xl font-sans h-full w-full text-sm md:text-md">
 	<Header />
@@ -180,7 +179,7 @@
 	<div class="relative">
 		{#if isTransitioning}
 			<div 
-				class="absolute inset-x-0 top-0 flex items-start justify-center pt-16 "
+				class="absolute inset-x-0 top-0 flex items-start justify-center pt-16 z-10"
 			>
 				<div 
 					class={transitionDirection === 'to-cv' ? 'icon-animate-cv' : transitionDirection === 'to-mail' ? 'icon-animate-mail' : 'icon-animate-home'}
@@ -200,10 +199,10 @@
 			</div>
 		{/if}
 		
+		<!-- Content container: use visibility instead of opacity for guaranteed hiding -->
 		<div 
-			class="transition-all duration-300 ease-out"
-			class:opacity-0={isTransitioning}
 			class:content-fade-in={contentFadingIn}
+			style:visibility={contentVisible ? 'visible' : 'hidden'}
 		>
 			<!-- Always render all views, hide inactive ones -->
 			<div style:display={currentView === 'home' ? 'block' : 'none'}>
@@ -220,14 +219,8 @@
 </main>
 
 <style>
-	.icon-animate-cv {
-		animation: iconFadeIn 0.6s ease-out forwards;
-	}
-	
-	.icon-animate-home {
-		animation: iconFadeIn 0.6s ease-out forwards;
-	}
-	
+	.icon-animate-cv,
+	.icon-animate-home,
 	.icon-animate-mail {
 		animation: iconFadeIn 0.6s ease-out forwards;
 	}
