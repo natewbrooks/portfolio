@@ -135,7 +135,22 @@
         ></textarea>
       </div>
 
-      <!-- rest of form -->
+      <button 
+        type="submit"
+        disabled={sending}
+        class="flex items-center justify-center space-x-2 px-4 py-3 bg-purple text-darkest font-bold rounded hover:bg-purple/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {#if sending}
+          <span>Sending...</span>
+        {:else}
+          <IconSend class="w-5 h-5" />
+          <span>Send Message</span>
+        {/if}
+      </button>
+
+      <p class="text-white/40 text-xs text-center">
+        Or email me directly at <a href="mailto:natewbrooks@gmail.com" class="text-purple hover:underline">natewbrooks@gmail.com</a>
+      </p>
     </form>
   {/if}
 </div>
