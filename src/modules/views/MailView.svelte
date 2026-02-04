@@ -94,7 +94,7 @@
           type="text" 
           id="name"
           bind:value={name}
-          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white"
+          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white text-base"
           placeholder="your name"
           required
         />
@@ -106,7 +106,7 @@
           type="email" 
           id="email"
           bind:value={email}
-          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white"
+          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white text-base"
           placeholder="your@email.com"
           required
         />
@@ -118,7 +118,7 @@
           type="text" 
           id="subject"
           bind:value={subject}
-          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white"
+          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white text-base"
           placeholder="what's this about?"
         />
       </div>
@@ -129,28 +129,13 @@
           id="message"
           bind:value={message}
           rows="6"
-          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white resize-none"
+          class="bg-light border border-light focus:border-orange outline-none px-3 py-2 rounded text-white text-base resize-none"
           placeholder="your message..."
           required
         ></textarea>
       </div>
 
-      <button 
-        type="submit"
-        disabled={sending}
-        class="flex items-center justify-center space-x-2 px-4 py-3 bg-purple text-darkest font-bold rounded hover:bg-purple/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {#if sending}
-          <span>Sending...</span>
-        {:else}
-          <IconSend class="w-5 h-5" />
-          <span>Send Message</span>
-        {/if}
-      </button>
-
-      <p class="text-white/40 text-xs text-center">
-        Or email me directly at <a href="mailto:natewbrooks@gmail.com" class="text-purple hover:underline">natewbrooks@gmail.com</a>
-      </p>
+      <!-- rest of form -->
     </form>
   {/if}
 </div>
