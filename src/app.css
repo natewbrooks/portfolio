@@ -27,7 +27,9 @@
     /* Text Size */
     --text-xs: 12px;
     --text-sm: 13px;
-    --text-md: 14px;
+    --text-md: 13px;
+    --text-lg: 15px;
+    --text-xl: 18px;
 
     /* Font */
     /* --font-sans: monospace; */

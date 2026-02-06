@@ -81,7 +81,7 @@
   }
 </script>
 
-<header class="crt sticky top-0 w-full pt-4 md:pt-12 space-y-2 border-b-2 border-light pb-2 bg-darkest z-30">
+<header class="crt sticky top-0 w-full pt-4 md:pt-12 space-y-2 border-b-1 border-dark pb-2 bg-darkest z-30">
   <div class="flex items-center w-full space-x-2 px-4 lg:px-0 flex-row justify-between">
     <div class="flex flex-col justify-center text-start">
       <span class="font-bold text-[20px] text-orange">nate w. brooks</span>

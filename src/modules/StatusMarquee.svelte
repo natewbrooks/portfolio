@@ -116,7 +116,7 @@
   let stableKey = $derived(statusItems.length);
 </script>
 
-<div class="overflow-hidden w-full relative">
+<div class="overflow-hidden w-full relative border-t-1 border-dark pt-2">
   {#key stableKey}
   <Marquee class="[--duration:40s] [--gap:2rem]">
     {#each statusItems as { icon, colorClass, label, status, subLabel }}
