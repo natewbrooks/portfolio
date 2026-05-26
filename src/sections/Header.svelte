@@ -86,7 +86,7 @@
     <div class="flex flex-col justify-center text-start">
       <span class="font-bold text-[20px] text-orange">nate w. brooks</span>
       <h1 class="text-pink font-bold">software engineer</h1>
-      <h1 class="text-purple font-bold">cs @ gopanda</h1>
+      <h1 class="text-purple font-bold">@ gopanda</h1>
       
       <div class="group flex text-[18px] gap-2 pt-1">
         {#each socialLinks as { icon: Icon, href, label, colorClass }}
