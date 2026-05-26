@@ -13,7 +13,11 @@ const QUALITY = 80;
 
 await fs.mkdir(OUT_DIR, { recursive: true });
 
-const files = await fg(PATTERN, { cwd: INPUT_DIR, absolute: true });
+const files = await fg(PATTERN, {
+  cwd: INPUT_DIR,
+  absolute: true,
+  ignore: ["optimized/**"],
+});
 
 await Promise.all(
   files.map(async (abs) => {

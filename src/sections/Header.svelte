@@ -143,9 +143,11 @@
         class="relative h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10 cursor-pointer"
       >
         <img
-          src="images/nate.jpg"
-          class="hidden xs:block w-[105px] h-full sm:h-[95px] object-cover object-[50%_5%]"
+          src="images/optimized/nate.webp"
+          class="block w-[105px] h-[95px] object-cover object-[50%_5%]"
           alt="profile pic"
+          width="105"
+          height="95"
           loading="eager"
           decoding="async"
           fetchpriority="high"
