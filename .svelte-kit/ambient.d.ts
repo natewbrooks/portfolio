@@ -44,6 +44,7 @@ declare module '$env/static/private' {
 	export const NVM_INC: string;
 	export const TERM_PROGRAM_VERSION: string;
 	export const XDG_BACKEND: string;
+	export const NVIDIA_API_KEY: string;
 	export const NODE: string;
 	export const COLOR: string;
 	export const npm_config_local_prefix: string;
@@ -60,6 +61,8 @@ declare module '$env/static/private' {
 	export const LOGNAME: string;
 	export const XDG_SESSION_TYPE: string;
 	export const npm_config_init_module: string;
+	export const GK_GL_PATH: string;
+	export const GK_GL_ADDR: string;
 	export const _: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const MOTD_SHOWN: string;
@@ -79,6 +82,7 @@ declare module '$env/static/private' {
 	export const NVM_DIR: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
+	export const CLAUDE_CODE_SSE_PORT: string;
 	export const npm_config_npm_version: string;
 	export const XDG_SESSION_CLASS: string;
 	export const TERM: string;
@@ -107,6 +111,7 @@ declare module '$env/static/private' {
 	export const __GLX_VENDOR_LIBRARY_NAME: string;
 	export const npm_config_node_gyp: string;
 	export const GDMSESSION: string;
+	export const XDG_SESSION_EXTRA_DEVICE_ACCESS: string;
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
 	export const npm_config_global_prefix: string;
@@ -164,6 +169,7 @@ declare module '$env/dynamic/private' {
 		NVM_INC: string;
 		TERM_PROGRAM_VERSION: string;
 		XDG_BACKEND: string;
+		NVIDIA_API_KEY: string;
 		NODE: string;
 		COLOR: string;
 		npm_config_local_prefix: string;
@@ -180,6 +186,8 @@ declare module '$env/dynamic/private' {
 		LOGNAME: string;
 		XDG_SESSION_TYPE: string;
 		npm_config_init_module: string;
+		GK_GL_PATH: string;
+		GK_GL_ADDR: string;
 		_: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		MOTD_SHOWN: string;
@@ -199,6 +207,7 @@ declare module '$env/dynamic/private' {
 		NVM_DIR: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
+		CLAUDE_CODE_SSE_PORT: string;
 		npm_config_npm_version: string;
 		XDG_SESSION_CLASS: string;
 		TERM: string;
@@ -227,6 +236,7 @@ declare module '$env/dynamic/private' {
 		__GLX_VENDOR_LIBRARY_NAME: string;
 		npm_config_node_gyp: string;
 		GDMSESSION: string;
+		XDG_SESSION_EXTRA_DEVICE_ACCESS: string;
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
 		npm_config_global_prefix: string;

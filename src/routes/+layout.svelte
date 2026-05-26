@@ -165,8 +165,8 @@
 	<link
 		rel="preload"
 		as="image"
-		href="/images/nate.png"
-		type="image/png"
+		href="/images/nate.jpg"
+		type="image/jpeg"
 	/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
