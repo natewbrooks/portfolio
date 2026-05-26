@@ -211,6 +211,8 @@
       <swiper-container bind:this={modalSwiperEl} init="false">
         {#each projects as project}
           <swiper-slide>
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
+            <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
             <img
               src={resolveFull(project)}
               alt={project.name}
@@ -220,7 +222,13 @@
               decoding="async"
               onclick={(e) => e.stopPropagation()}
             />
-            <div class="mt-2 text-center text-white/60" onclick={closeModal}>
+            <div
+              class="mt-2 text-center text-white/60"
+              role="button"
+              tabindex="0"
+              onclick={closeModal}
+              onkeydown={(e) => e.key === 'Enter' && closeModal()}
+            >
               {project.name}
             </div>
           </swiper-slide>
