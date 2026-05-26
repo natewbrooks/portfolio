@@ -25,7 +25,7 @@
               {@const isCurrent = role.date.end === "Present"}
               <li class="relative">
                 <span
-                  class={`absolute -left-[29.5px] top-[3.5px] w-3 h-3 rounded-full border-2 ${c.border} ${isCurrent ? "bg-darkest" : c.bg}`}
+                  class={`absolute -left-[31px] top-[2px] md:-left-[29.5px] md:top-[3.5px] w-3 h-3 rounded-full border-2 ${c.border} ${isCurrent ? "bg-darkest" : c.bg}`}
                   aria-hidden="true"
                 ></span>
                 <div class="flex flex-col md:flex-row md:items-center md:gap-2">

@@ -5,10 +5,13 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [
-		tailwindcss(), 
-		sveltekit(), 
+		tailwindcss(),
+		sveltekit(),
 		Icons({
 			compiler: 'svelte',
 			autoInstall: true
-		}),]
+		}),],
+	server: {
+		allowedHosts: ['glabrous-charlize-unonerously.ngrok-free.dev']
+	}
 });
