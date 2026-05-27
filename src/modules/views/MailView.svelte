@@ -55,7 +55,7 @@
   }
 </script>
 
-<div class="relative py-4 px-4 h-full flex flex-col space-y-4 min-h-screen">
+<div class="relative py-4 px-4 h-full flex flex-col space-y-4">
   <div class="sticky top-0 w-full flex items-center justify-between bg-darkest py-2 z-10">
     <span class="text-purple font-bold">send me a message</span>
     <button 
