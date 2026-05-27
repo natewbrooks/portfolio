@@ -14,7 +14,7 @@
 	import MailView from '../modules/views/MailView.svelte';
 	import type { LayoutProps } from './$types';
 
-	let { data, children }: LayoutProps = $props();
+	let { data }: LayoutProps = $props();
 	let scrollY: number = $state(0);
 	let windowWidth: number = $state(0);
 	let scrolled: boolean = $state(false);
@@ -215,7 +215,6 @@
 			<div style:display={currentView === 'mail' ? 'block' : 'none'}>
 				<MailView />
 			</div>
-			{#if children}{@render children()}{/if}
 		</div>
 	</div>
 </main>
