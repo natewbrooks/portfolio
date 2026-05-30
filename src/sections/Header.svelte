@@ -38,7 +38,7 @@
     },
     { 
       icon: IconLinkedin, 
-      href: "https://www.linkedin.com/in/nate-brooks-7b16382b2/", 
+      href: "https://www.linkedin.com/in/natewbrooks/", 
       label: "LinkedIn",
       colorClass: "text-blue"
     },
