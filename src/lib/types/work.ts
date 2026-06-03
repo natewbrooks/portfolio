@@ -25,9 +25,9 @@ const gopandaInternRole: Role = {
 };
 
 const gopandaSweRole: Role = {
-  title: "Software Engineer",
+  title: "Software Engineer I",
   date: { start: "Jun 2026", end: "Present" },
-  description: ""
+  description: "Promoted to full-time engineer building frontend and backend applications across client and internal projects. Develop cross-platform mobile apps with React Native, integrate APIs and real-time systems, and drive code quality through testing, debugging, and code reviews."
 };
 
 const gopandaRoles: Role[] = isPromoted
