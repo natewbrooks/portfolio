@@ -12,7 +12,7 @@ export type WorkItem = {
 };
 
 // GoPanda: intern role promotes to full SWE on Jun 1, 2026
-const gopandaPromotionDate = new Date("2026-06-01T00:00:00");
+const gopandaPromotionDate = new Date("2026-06-03T00:00:00");
 const isPromoted = new Date() >= gopandaPromotionDate;
 
 const gopandaInternRole: Role = {
