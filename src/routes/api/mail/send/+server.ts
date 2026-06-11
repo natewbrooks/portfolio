@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { validateMailFields, isSmtpConfigured, logMailFallback, sendContactMail } from '$lib/server/mail';
+import { validateMailFields, isMailConfigured, logMailFallback, sendContactMail } from '$lib/server/mail';
 
 export const POST: RequestHandler = async ({ request }) => {
   try {
@@ -12,8 +12,8 @@ export const POST: RequestHandler = async ({ request }) => {
       return json({ error: validation.error }, { status: 400 });
     }
 
-    // Check if SMTP is configured
-    if (!isSmtpConfigured()) {
+    // Check if Resend is configured
+    if (!isMailConfigured()) {
       logMailFallback({ name, email, subject, message });
       return json({ success: true, note: 'Email logged (SMTP not configured)' });
     }
