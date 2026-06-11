@@ -72,7 +72,7 @@
     <div class="flex flex-col items-center justify-center py-16 space-y-4">
       <div class="text-green text-6xl">✓</div>
       <h2 class="text-xl text-green font-bold">Message Sent!</h2>
-      <p class="text-white/60">Thanks for reaching out. I'll get back to you soon.</p>
+      <p class="text-white/60 text-center">Thanks for reaching out. I'll get back to you soon.</p>
       <button 
         onclick={resetForm}
         class="mt-4 flex items-center justify-center space-x-2 px-4 py-3 bg-purple text-darkest font-bold rounded hover:bg-purple/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"

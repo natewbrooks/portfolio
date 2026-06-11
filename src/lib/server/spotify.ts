@@ -49,6 +49,38 @@ async function spotifyFetch<T>(path: string) {
   return (await res.json()) as T;
 }
 
+const responseCache = new Map<string, { value: any; expiresAt: number }>();
+const inflight = new Map<string, Promise<any>>();
+
+/**
+ * Serve `fn`'s result from cache within `ttlMs`, deduping concurrent callers so
+ * simultaneous requests share one upstream call. On fetch failure (e.g. Spotify 429)
+ * falls back to the last cached value so rate limits don't surface as 500s.
+ */
+async function cached<T>(key: string, ttlMs: number, fn: () => Promise<T>): Promise<T> {
+  const hit = responseCache.get(key);
+  if (hit && Date.now() < hit.expiresAt) return hit.value as T;
+
+  const existing = inflight.get(key);
+  if (existing) return existing as Promise<T>;
+
+  const promise = (async () => {
+    try {
+      const value = await fn();
+      responseCache.set(key, { value, expiresAt: Date.now() + ttlMs });
+      return value;
+    } catch (err) {
+      if (hit) return hit.value as T;
+      throw err;
+    } finally {
+      inflight.delete(key);
+    }
+  })();
+
+  inflight.set(key, promise);
+  return promise;
+}
+
 export async function nowPlaying() {
   const data = await spotifyFetch<any>(`/me/player/currently-playing?additional_types=track,episode`);
   if (!data?.item) return { isPlaying: false as const };
@@ -76,7 +108,7 @@ export async function nowPlaying() {
   };
 }
 
-export async function mostRecentTrack() {
+async function _mostRecentTrack() {
   const data = await spotifyFetch<any>(`/me/player/recently-played?limit=1`);
   const it = data?.items?.[0];
   if (!it?.track) return null;
@@ -90,7 +122,12 @@ export async function mostRecentTrack() {
   };
 }
 
-export async function currentListening() {
+/** Cached 20s; serves stale data on Spotify rate limits. */
+export function mostRecentTrack() {
+  return cached("recent", 20_000, _mostRecentTrack);
+}
+
+async function _currentListening() {
   const now = await nowPlaying();
 
   if (now?.isPlaying) {
@@ -100,7 +137,7 @@ export async function currentListening() {
     };
   }
 
-  const recent = await mostRecentTrack();
+  const recent = await _mostRecentTrack();
   if (!recent) return null;
 
   return {
@@ -115,7 +152,12 @@ export async function currentListening() {
   };
 }
 
-export async function topTrackMonth() {
+/** Cached 20s; serves stale data on Spotify rate limits. */
+export function currentListening() {
+  return cached("current", 20_000, _currentListening);
+}
+
+async function _topTrackMonth() {
   const data = await spotifyFetch<any>(`/me/top/tracks?time_range=short_term&limit=1`);
   const t = data?.items?.[0];
   if (!t) return null;
@@ -128,7 +170,12 @@ export async function topTrackMonth() {
   };
 }
 
-export async function topTrackWeekBestEffort() {
+/** Cached 10min; serves stale data on Spotify rate limits. */
+export function topTrackMonth() {
+  return cached("top-month", 600_000, _topTrackMonth);
+}
+
+async function _topTrackWeekBestEffort() {
   const after = Date.now() - 7 * 24 * 60 * 60 * 1000;
 
   const data = await spotifyFetch<any>(
@@ -172,7 +219,12 @@ export async function topTrackWeekBestEffort() {
   };
 }
 
-export async function favoritePodcastProxy() {
+/** Cached 5min; serves stale data on Spotify rate limits. */
+export function topTrackWeekBestEffort() {
+  return cached("top-week", 300_000, _topTrackWeekBestEffort);
+}
+
+async function _favoritePodcastProxy() {
   const data = await spotifyFetch<any>(`/me/shows?limit=1`);
   const show = data?.items?.[0]?.show;
   if (!show) return null;
@@ -184,4 +236,9 @@ export async function favoritePodcastProxy() {
     image: show.images?.[0]?.url,
     note: "Spotify does not expose 'most listened podcast' via Web API. This is your first saved show."
   };
+}
+
+/** Cached 30min; serves stale data on Spotify rate limits. */
+export function favoritePodcastProxy() {
+  return cached("podcast", 1_800_000, _favoritePodcastProxy);
 }
