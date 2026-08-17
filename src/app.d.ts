@@ -3,6 +3,10 @@
 import 'unplugin-icons/types/svelte';
 
 declare global {
+	interface Window {
+		umami?: { track: (event: string, data?: Record<string, unknown>) => void };
+	}
+
 	namespace App {
 		// interface Error {}
 		// interface Locals {}

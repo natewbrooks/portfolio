@@ -19,6 +19,7 @@
     
     if (!name || !email || !message) {
       error = "Please fill in all required fields";
+      window.umami?.track("contact-invalid");
       return;
     }
 
@@ -38,12 +39,14 @@
       }
 
       sent = true;
+      window.umami?.track("contact-sent", { hasSubject: !!subject });
       name = "";
       email = "";
       subject = "";
       message = "";
     } catch (err) {
       error = err instanceof Error ? err.message : "Failed to send message";
+      window.umami?.track("contact-failed", { reason: error });
     } finally {
       sending = false;
     }
@@ -149,7 +152,7 @@
       </button>
 
       <p class="text-white/40 text-xs text-center">
-        Or email me directly at <a href="mailto:natewbrooks@gmail.com" class="text-purple hover:underline">natewbrooks@gmail.com</a>
+        Or email me directly at <a href="mailto:natewbrooks@gmail.com" data-umami-event="mailto-click" class="text-purple hover:underline">natewbrooks@gmail.com</a>
       </p>
     </form>
   {/if}

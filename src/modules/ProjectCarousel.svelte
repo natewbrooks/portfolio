@@ -161,6 +161,8 @@
           onmouseenter={() => handleCarouselItemInteraction(project)}
           onmouseleave={() => setHighlighted("")}
           onclick={() => openModal(i, project)}
+          data-umami-event="project-preview-open"
+          data-umami-event-project={project.name}
           aria-label={`Open ${project.name}`}
         >
           <img

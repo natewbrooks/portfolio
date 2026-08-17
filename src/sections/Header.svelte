@@ -96,6 +96,8 @@
             rel="noopener noreferrer"
             aria-label={label}
             class={`w-fit sm:py-1 ${colorClass}`}
+            data-umami-event="social-click"
+            data-umami-event-platform={label}
           >
             <Icon />
           </a>
@@ -106,8 +108,10 @@
     <div class="group flex justify-end">
       <div class="sm:text-[20px] flex flex-col w-fit justify-end items-center text-xl">
         {#each navTabs as { icon: Icon, name, colorClass, getIsActive, onClick, getAriaLabel }}
-          <button 
+          <button
             onclick={onClick}
+            data-umami-event="nav-click"
+            data-umami-event-tab={name}
             class={[
               "relative px-2 py-1 sm:py-0.5 transition-all duration-300 ease-out cursor-pointer",
               colorClass,
@@ -140,6 +144,7 @@
 
       <button
         onclick={handleProfileClick}
+        data-umami-event="profile-pic-click"
         class="relative h-full rounded-tr-[50%] rounded-tl-[60%] rounded-bl-none rounded-br-[60%] overflow-hidden z-10 cursor-pointer"
       >
         <img

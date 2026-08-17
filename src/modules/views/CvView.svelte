@@ -16,6 +16,7 @@
             <a 
                 href={pdfUrl} 
                 download="NathanielBrooksResume.pdf"
+                data-umami-event="resume-download"
                 class="text-green hover:text-green/80 transition-colors flex items-center space-x-1"
                 aria-label="Download resume"
             >
@@ -25,6 +26,7 @@
             <a 
                 href={pdfUrl} 
                 target="_blank"
+                data-umami-event="resume-open-new-tab"
                 class="text-blue hover:text-blue/80 transition-colors flex items-center space-x-1"
                 aria-label="Open resume in new tab"
             >
