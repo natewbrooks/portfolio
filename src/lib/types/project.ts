@@ -88,6 +88,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'theystill.live',
+    description: 'Live-status checker for YouTube and Twitch without the headache of API keys, login, or OAuth. Scrapes the public channel page with Cheerio and answers a single boolean over HTTP, so any site can ask whether a streamer is on air right now. Built in one evening when I couldn\'t find anything else that did it.',
+    year: 2026,
+    link: 'https://theystill.live',
+    technologies: [TECH.Node, TECH.JavaScript, TECH.HTML, TECH.CSS],
+    imgThumb: 'images/optimized/theystill-live.webp',
+    imgFull: 'images/theystill-live.webp',
+  },
+  {
     name: 'Timesheet',
     description: 'Cross-platform time tracking with shared workspaces, threaded comments, and markdown notes. Stateless Fastify/TypeScript API on PostgreSQL with Redis-backed job workers, one SvelteKit codebase shipping as PWA and native Tauri desktop app.',
     year: 2026,
