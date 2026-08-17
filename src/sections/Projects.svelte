@@ -45,7 +45,7 @@
   <span class="font-bold text-pink text-md md:text-lg">projects <span class="text-xs font-normal text-white/60">({projects.length})</span></span>
   <br/>
   <br/>
-  <div class="max-h-[300px] md:max-h-[190px] overflow-y-auto">
+  <div class="max-h-[430px] md:max-h-[318px] overflow-y-auto">
     <ul class="list-none ml-2 md:ml-4 flex flex-col">
       {#each projects as project}
       {@const c = yearStyles(project.year)}

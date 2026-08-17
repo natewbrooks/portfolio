@@ -88,6 +88,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'Timesheet',
+    description: 'Cross-platform time tracking with shared workspaces, threaded comments, and markdown notes. Stateless Fastify/TypeScript API on PostgreSQL with Redis-backed job workers, one SvelteKit codebase shipping as PWA and native Tauri desktop app.',
+    year: 2026,
+    link: 'https://github.com/natewbrooks/timesheetv2',
+    technologies: [TECH.Svelte, TECH.Typescript, TECH.Node, TECH.PostgreSQL, TECH.Docker],
+    imgThumb: 'images/optimized/timesheet.webp',
+    imgFull: 'images/timesheet.webp',
+  },
+  {
     name: 'Spark Dating App',
     description: 'A synchronous dating platform built for real-time, one-to-one engagement where users connect through live conversations to see if sparks fly.',
     year: 2025,

@@ -14,8 +14,7 @@
   <span class="font-bold text-md md:text-lg text-green">work <span class="text-xs font-normal text-white/60">({workExperience.length})</span></span>
   <br/>
   <br/>
-  <div class="max-h-[600px] md:max-h-[320px] overflow-y-auto">
-    <ul class="list-none ml-2 md:ml-4 flex-col">
+  <ul class="list-none ml-2 md:ml-4 flex-col">
       {#each workExperience as work}
         {@const c = COLOR[work.colorClass as keyof typeof COLOR]}
         <li class={`relative border-l-2 ${c.border} pl-6 pr-4 py-2`}>
@@ -38,6 +37,5 @@
           </ul>
         </li>
       {/each}
-    </ul>
-  </div>
+  </ul>
 </section>
