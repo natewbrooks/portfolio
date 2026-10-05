@@ -22,7 +22,7 @@
   {#each [0, 1] as i}
     <div
       class={cn(
-        "flex shrink-0 items-center",
+        "flex shrink-0 items-center will-change-transform",
         "[gap:var(--gap)] [padding-right:var(--gap)]",
         {
           "animate-marquee flex-row": !vertical,
