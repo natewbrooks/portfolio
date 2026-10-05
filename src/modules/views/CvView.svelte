@@ -4,7 +4,7 @@
   import IconOpenNew from "~icons/mdi/open-in-new";
   import IconHome from "~icons/mdi/home";
 
-  const pdfUrl = "NathanielBrooksResumeNEW.pdf";
+  const pdfUrl = "Nathaniel Brooks Resume.pdf";
   
   const navigateToHome = getContext<() => void>("navigateToHome");
 </script>

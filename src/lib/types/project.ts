@@ -97,13 +97,13 @@ export const projects: Project[] = [
     imgFull: 'images/theystill-live.webp',
   },
   {
-    name: 'Timesheet',
-    description: 'Cross-platform time tracking with shared workspaces, threaded comments, and markdown notes. Stateless Fastify/TypeScript API on PostgreSQL with Redis-backed job workers, one SvelteKit codebase shipping as PWA and native Tauri desktop app.',
+    name: 'Ledger',
+    description: 'Cross-platform shared timesheets for teams: weekly sheets with a running timer, live progress toward target hours and pay, threaded comments with GitHub issue and PR links, and full-markdown notes. Fastify/TypeScript API on PostgreSQL and Redis with BullMQ workers and WebSocket realtime, one SvelteKit codebase shipping as a web PWA and native Tauri desktop app for Linux, Windows, and macOS.',
     year: 2026,
     link: 'https://timesheet-prod.up.railway.app',
     technologies: [TECH.Svelte, TECH.Typescript, TECH.Node, TECH.PostgreSQL, TECH.Docker],
-    imgThumb: 'images/optimized/timesheet.webp',
-    imgFull: 'images/timesheet.webp',
+    imgThumb: 'images/optimized/ledger.webp',
+    imgFull: 'images/ledger.webp',
   },
   {
     name: 'Spark Dating App',

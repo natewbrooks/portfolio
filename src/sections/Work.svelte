@@ -24,7 +24,7 @@
               {@const isCurrent = role.date.end === "Present"}
               <li class="relative">
                 <span
-                  class={`absolute -left-[31px] top-[2px] md:-left-[29.5px] md:top-[3.5px] w-3 h-3 rounded-full border-2 ${c.border} ${isCurrent ? "bg-darkest" : c.bg}`}
+                  class={`timeline-dot absolute -left-[31px] top-[2px] md:-left-[29.5px] md:top-[3.5px] w-3 h-3 rounded-full border-2 ${c.border} ${isCurrent ? "bg-darkest" : c.bg}`}
                   aria-hidden="true"
                 ></span>
                 <div class="flex flex-col md:flex-row md:items-center md:gap-2">
@@ -39,3 +39,13 @@
       {/each}
   </ul>
 </section>
+
+<style>
+  /* Chromium rounds the fractional offset differently than Firefox */
+  @supports (-webkit-tap-highlight-color: black) {
+    .timeline-dot { left: -32px; }
+    @media (min-width: 768px) {
+      .timeline-dot { left: -30.5px; }
+    }
+  }
+</style>
